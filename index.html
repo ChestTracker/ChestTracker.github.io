@@ -28,7 +28,7 @@
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ChestTracker","applicationCategory":"GameApplication","operatingSystem":"Windows 10, Windows 11",
  "description":"Chest counter and treasure odds tracker for Fortnite Battle Royale: counts every chest opened or destroyed from your replays and shows your odds for every Treasure Hunters reward.",
  "url":"https://chesttracker.github.io/","image":"https://chesttracker.github.io/icon.png","author":{"@type":"Organization","name":"CDRas"},"inLanguage":["en","it"],
- "offers":{"@type":"Offer","price":"4.99","priceCurrency":"EUR","url":"https://chesttracker.github.io/#price"},
+ "offers":{"@type":"AggregateOffer","lowPrice":"5","highPrice":"15","priceCurrency":"EUR","offerCount":"3","url":"https://chesttracker.github.io/#price"},
  "featureList":["Counts every chest opened or destroyed from replays","Real odds for every Treasure Hunters reward","Next-match forecast","In-game overlay under the minimap","Squad chests","Weekly rewards with pictures"]}
 </script>
 <script type="application/ld+json">
@@ -117,6 +117,15 @@
   .price ul { list-style:none; padding:0; margin:0 0 22px; text-align:left; }
   .price li { padding:7px 0; }
   .price li::before { content:"✓  "; color:var(--green); font-weight:700; }
+  .plans { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px; margin:18px 0 8px; }
+  .plan { display:flex; flex-direction:column; }
+  .plan h3 { font-size:20px; margin:0; }
+  .plan .amt { font-size:42px; font-weight:800; margin:4px 0 0; }
+  .plan ul { list-style:none; padding:0; margin:14px 0 20px; flex:1; }
+  .plan li { padding:5px 0; font-size:14.5px; color:var(--text); }
+  .plan li::before { content:"âœ“  "; color:var(--green); font-weight:700; }
+  .plan.best { border-color:#3a2f6b; background:linear-gradient(160deg, #1b1830, var(--panel)); }
+  .plan .btn { width:100%; }
   .faq details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
   .faq summary { cursor:pointer; font-weight:600; }
   .faq p { color:var(--muted); margin:10px 0 0; }
@@ -230,25 +239,29 @@
   </section>
 
   <section id="price">
-    <div class="card price">
-      <h2 data-t="pT">ChestTracker</h2>
-      <div class="amt" id="amount" data-t="pA">One-time</div>
-      <div class="once" data-t="pO">One payment · no subscription</div>
-      <div class="once" style="color:var(--green)" data-t="pF">🎁 Free trial: your first 3 matches are free</div>
-      <ul>
-        <li data-t="p1">Every chest counted, automatically</li>
-        <li data-t="p2">Real odds for every reward</li>
-        <li data-t="p3">In-game overlay and match card</li>
-        <li data-t="p4">Squad chests and weekly rewards</li>
-        <li data-t="p5">All future updates included</li>
-        <li data-t="p6">1 PC (move it anytime)</li>
-      </ul>
-      <a class="btn lg buy" style="width:100%" href="#" data-t="buy">Get ChestTracker</a>
-      <p class="fine" data-t="pS">Secure checkout by Lemon Squeezy · cards, PayPal, Apple Pay</p>
-      <p class="fine" data-t="pD">After payment you get your licence key and the setup download, on screen and by email, on phone or PC. Save them: we can't give support if the setup file or the key is lost.</p>
+    <h2 style="text-align:center" data-t="plT">Pick your plan</h2>
+    <p class="lead" style="text-align:center" data-t="plL">One payment, no subscription. Try 3 matches free first.</p>
+    <div class="plans">
+      <div class="card plan">
+        <h3>Normal</h3><div class="amt">â‚¬5</div>
+        <ul><li data-t="p1">Every chest counted, automatically</li><li data-t="p2">Real odds for every reward</li><li data-t="p3">In-game overlay and match card</li><li data-t="p6">1 PC (move it anytime)</li></ul>
+        <a class="btn lg buy" data-plan="normal" href="#" data-t="choose">Choose</a>
+      </div>
+      <div class="card plan best">
+        <h3>Pro</h3><div class="amt">â‚¬10</div>
+        <ul><li data-t="inN">Everything in Normal</li><li data-t="p4">Squad chests and weekly rewards</li><li data-t="pr1">Next-match forecast and lobby view</li><li data-t="pr3">Luck check and full odds calculator</li><li data-t="pr4">CSV / JSON export</li><li data-t="p6">1 PC (move it anytime)</li></ul>
+        <a class="btn lg buy" data-plan="pro" href="#" data-t="choose">Choose</a>
+      </div>
+      <div class="card plan">
+        <h3>Ultimate</h3><div class="amt">â‚¬15</div>
+        <ul><li data-t="inP">Everything in Pro</li><li data-t="u1">Treasure Hour planner</li><li data-t="u2">Week and season projection</li><li data-t="u3">Goals with alerts</li><li data-t="u4">Custom overlay and shareable session card</li><li data-t="u5">Backup and restore on a new PC</li><li data-t="u6">Beta access and priority support</li><li data-t="p7">2 PCs (move them anytime)</li></ul>
+        <a class="btn lg buy" data-plan="ultimate" href="#" data-t="choose">Choose</a>
+      </div>
     </div>
+    <p class="fine" style="text-align:center" data-t="pS">Secure checkout by Lemon Squeezy Â· cards, PayPal, Apple Pay (also via QR code from your iPhone) and Google Pay, where available. On Brave or other browsers, card and PayPal always work.</p>
+    <p class="fine" style="text-align:center" data-t="pD">After payment you get your licence key and the setup download, on screen and by email, on phone or PC. Save them: we can't give support if the setup file or the key is lost.</p>
+    <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Support and community on Discord</a></p>
   </section>
-
   <section class="faq">
     <h2 data-t="faqT">Questions</h2>
     <details><summary data-t="q3">Can I get banned?</summary><p data-t="a3">ChestTracker only reads the replay files that Fortnite saves on your PC, the same files the in-game replay viewer uses. It doesn't read the game's memory, doesn't change the game and doesn't use your Epic account.</p></details>
@@ -308,7 +321,7 @@
     s3t:"Gioca", s3:"Attiva una volta i replay in Fortnite. Al resto pensa ChestTracker, ogni partita.",
     pT:"ChestTracker", pA:"Una volta", pO:"Pagamento unico · nessun abbonamento",
     p1:"Ogni forziere contato, in automatico", p2:"Probabilità reali per ogni premio", p3:"Overlay in gioco e scheda di fine partita", p4:"Forzieri della squadra e premi della settimana", p5:"Tutti gli aggiornamenti futuri inclusi", p6:"1 PC (lo sposti quando vuoi)",
-    pS:"Pagamento sicuro con Lemon Squeezy · carte, PayPal, Apple Pay",
+    pS:"Pagamento sicuro con Lemon Squeezy Â· carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili. Su Brave o altri browser carta e PayPal funzionano sempre.",
     faqT:"Domande",
     q3:"Rischio il ban?", a3:"ChestTracker legge solo i file replay che Fortnite salva sul tuo PC, gli stessi della funzione Replay del gioco. Non legge la memoria del gioco, non lo modifica e non usa il tuo account Epic.",
     q2:"Mostra i forzieri in diretta durante la partita?", a2:"Il gioco sblocca il replay solo a fine partita, quindi i forzieri compaiono circa 2 secondi dopo la fine. Poi la scheda in gioco ti mostra tutto.",
@@ -367,15 +380,18 @@
   else if (/[?&]purchased=1/.test(location.search)) showMine({ receipt: "" });
 
   // buy buttons: until the store is live they only scroll to the price box; then they open the checkout
-  const TEST_URL = "https://chesttracker.lemonsqueezy.com/checkout/buy/e5b16e55-6ac1-406a-a689-4cc22b4987d5"; // test mode: open the page with #test to try it
-  const CHECKOUT = location.hash === "#test" ? TEST_URL : BUY_URL;
-  document.querySelectorAll("#price .buy, .final .buy").forEach(b => {
-    if (CHECKOUT) { b.href = CHECKOUT + "?embed=1&media=0"; b.classList.add("lemonsqueezy-button"); }
-    else if (b.closest("#price")) b.setAttribute("aria-disabled", "true");
+  // one checkout link per plan: empty until the store is live. Open the page with #test to try the test-mode links.
+  const PLAN_URL = { normal: "", pro: "", ultimate: "" };
+  const TEST_URL = { normal: "", pro: "", ultimate: "" };
+  const URLS = location.hash === "#test" ? TEST_URL : PLAN_URL;
+  const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
+  document.querySelectorAll("#price .buy").forEach(b => {
+    const u = URLS[b.dataset.plan];
+    if (u) { b.href = u + "?embed=1&media=0"; b.classList.add("lemonsqueezy-button"); }
+    else b.setAttribute("aria-disabled", "true");
   });
   window.addEventListener("load", () => {
-    if (!CHECKOUT || !window.createLemonSqueezy) return;
-    try {
+    if (!ANY || !window.createLemonSqueezy) return;    try {
       createLemonSqueezy();
       LemonSqueezy.Setup({ eventHandler: ev => {
         if (ev && ev.event === "Checkout.Success") {
