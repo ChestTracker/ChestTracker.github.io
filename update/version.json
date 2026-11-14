@@ -1,8 +1,8 @@
 {
-    "version":  "2.8.5",
+    "version":  "2.8.7",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "524b2f65e9eff5f90f9ac4975d597991ec7bb3f3f1a292f19082bc2f28ca1e81",
+    "sha256":  "96bf8687d7d2d04b86bcdfa7829ba6a33ab3a135a5ce7b457efbf17ad630fde7",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "def9db51ce601810ac1860050cc9a86b01795d0066478a27be378b72bf6dfbba",
-    "notes":  "• Small improvements and fixes"
+    "setupSha256":  "37d48ae733d149ffc99e6cb484e1cc28e1eb5475971f948c58a481b17940aa2f",
+    "notes":  "• Ultimate tools split into separate pages\n• Small improvements and fixes"
 }
