@@ -161,7 +161,7 @@
       <a class="btn lg" id="mRec" href="#" target="_blank" rel="noopener" data-t="mB">Open receipt: key + download</a>
       <button class="ghost" id="mCopy" data-t="mC">Copy my link</button>
     </div>
-    <p class="fine" data-t="mN">⚠ Keep the setup file and your licence key somewhere safe (email, password manager). We can't give support or send them again if they are lost. Paid on your phone? The setup is a Windows program: open the link on your PC to download and install it.</p>
+    <p class="fine" data-t="mN">⚠ Keep the setup file and your licence key somewhere safe (email, password manager). Lost them? Find them again in "My orders", or ask for help on our Discord. Paid on your phone? The setup is a Windows program: open the link on your PC to download and install it.</p>
     <p class="fine"><a href="https://app.lemonsqueezy.com/my-orders" target="_blank" rel="noopener" data-t="mO">Lost the email? Find your orders with your email address</a></p>
   </section>
 
@@ -262,7 +262,7 @@
       </div>
     </div>
     <p class="fine" style="text-align:center" data-t="pS">Secure checkout by Lemon Squeezy · cards, PayPal, Apple Pay (also via QR code from your iPhone) and Google Pay, where available. On Brave or other browsers, card and PayPal always work.</p>
-    <p class="fine" style="text-align:center" data-t="pD">After payment you get your licence key and the setup download, on screen and by email, on phone or PC. Save them: we can't give support if the setup file or the key is lost.</p>
+    <p class="fine" style="text-align:center" data-t="pD">After payment you get your licence key and the setup download, on screen and by email, on phone or PC. Save them somewhere safe. Need help? Our support is on Discord: open a ticket.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Support and community on Discord</a></p>
   </section>
   <section class="faq">
@@ -272,7 +272,7 @@
     <details><summary data-t="q1">Can I use it on another PC?</summary><p data-t="a1">One key works on one PC at a time. To move it: Settings → Licence → Deactivate this PC, then activate it on the new one.</p></details>
     <details><summary data-t="q5">Which modes are counted?</summary><p data-t="a5">Battle Royale, Build and Zero Build: Solo, Duos, Trios and Squads. Other modes are ignored and the overlay hides itself.</p></details>
     <details><summary data-t="q6">What happens after I pay?</summary><p data-t="a6">You get your licence key and the setup download straight away, on the confirmation screen and by email. It works the same on phone and PC: on a phone just save the link and open it on your PC to install. This browser also remembers your purchase, so the download button is here when you come back.</p></details>
-    <details><summary data-t="q7">I lost the setup file or my key</summary><p data-t="a7">Store both safely: we can't give support if they are lost. You can still find them yourself: open "My orders" and sign in with the email you paid with.</p></details>
+    <details><summary data-t="q7">I lost the setup file or my key</summary><p data-t="a7">Open "My orders" and sign in with the email you paid with: your licence key and the setup download are there. Still stuck? Open a ticket on our Discord and we'll help.</p></details>
     <details><summary data-t="q4">Windows says "unknown app"</summary><p data-t="a4">That's normal for new apps from small developers: click "More info" → "Run anyway".</p></details>
   </section>
 
@@ -297,11 +297,11 @@
     kick:"CONTATORE FORZIERI E PROBABILITÀ TESORI PER FORTNITE",
     mT:"✓ Il tuo acquisto di ChestTracker", mL:"La chiave di licenza e il download del setup sono nella ricevuta e nell'email che ti abbiamo mandato.",
     mB:"Apri la ricevuta: chiave + download", mC:"Copia il mio link",
-    mN:"⚠ Conserva il file di setup e la chiave di licenza in un posto sicuro (email, gestore di password). Non possiamo dare assistenza né reinviarli se li perdi. Hai pagato da telefono? Il setup è un programma per Windows: apri il link sul PC per scaricarlo e installarlo.",
+    mN:"⚠ Conserva il file di setup e la chiave di licenza in un posto sicuro (email, gestore di password). Li hai persi? Ritrovali in \"I miei ordini\" o chiedi aiuto sul nostro Discord. Hai pagato da telefono? Il setup è un programma per Windows: apri il link sul PC per scaricarlo e installarlo.",
     mO:"Hai perso l'email? Ritrova i tuoi ordini con il tuo indirizzo email",
-    pD:"Dopo il pagamento ricevi la chiave di licenza e il download del setup, a schermo e via email, da telefono o da PC. Salvali: non possiamo dare assistenza se perdi il file di setup o la chiave.",
+    pD:"Dopo il pagamento ricevi la chiave di licenza e il download del setup, a schermo e via email, da telefono o da PC. Salvali in un posto sicuro. Ti serve aiuto? Il nostro supporto è su Discord: apri un ticket.",
     q6:"Cosa succede dopo il pagamento?", a6:"Ricevi subito la chiave di licenza e il download del setup, sulla schermata di conferma e via email. Funziona uguale da telefono e da PC: da telefono salva il link e aprilo sul PC per installare. Questo browser ricorda anche il tuo acquisto, così il pulsante di download ti aspetta qui quando torni.",
-    q7:"Ho perso il file di setup o la chiave", a7:"Conservali bene: non possiamo dare assistenza se li perdi. Puoi comunque ritrovarli da solo: apri \"I miei ordini\" e accedi con l'email con cui hai pagato.",
+    q7:"Ho perso il file di setup o la chiave", a7:"Apri \"I miei ordini\" e accedi con l'email con cui hai pagato: la chiave di licenza e il download del setup sono lì. Sei ancora bloccato? Apri un ticket sul nostro Discord e ti aiutiamo.",
     h1:"Basta tirare a indovinare.<br><span>Scopri le tue vere probabilità.</span>",
     sub:"ChestTracker conta ogni forziere che apri o distruggi, partita dopo partita, e ti dice esattamente quanto sei vicino al token del Negozio Pirata, alla skin d'oro e a ogni altro premio.",
     t1:"Windows 10 / 11", t2:"Tutto automatico", t3:"Non tocca mai il gioco", t4:"Aggiornamenti gratis",
@@ -345,14 +345,14 @@
       ODDS.map(o => `<div class="row"><span>${it ? o[2] : o[1]} <span style="color:var(--muted);font-size:13px">1/${o[3].toLocaleString(it ? "it" : "en")}</span></span><b>${pct(-Math.expm1(n*Math.log1p(-1/o[3])))}</b></div>`).join("");
   }
   function setLang(v){
-    it = v; document.documentElement.lang = it ? "it" : "en";
+    it = v; /* the page keeps its own language (lang="es", "fr"...): never reset it */
     document.querySelectorAll("[data-t]").forEach(e => e.innerHTML = (it ? IT : EN)[e.dataset.t] || EN[e.dataset.t]);
     if (PRICE) document.getElementById("amount").textContent = PRICE;
     calc();
   }
   document.getElementById("per").oninput = calc; document.getElementById("mat").oninput = calc;
   setLang(document.documentElement.lang === "it"); // each language has its own page so search engines index all of them
-  document.getElementById("langBtn").value = ({en:"/", it:"/it/", es:"/es/", fr:"/fr/", de:"/de/", pt:"/pt/"})[document.documentElement.lang] || "/";
+  document.getElementById("langBtn").value = (document.documentElement.lang === "en" ? "/" : "/" + document.documentElement.lang + "/");
   // ---- purchase memory: the receipt link (licence key + download) is kept in this browser for ~13 months (the longest browsers allow)
   const ORDER_KEY = "ct_order";
   function saveOrder(o){
