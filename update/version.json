@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.1",
+    "version":  "2.9.2",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "2d3fefa2d4e3af98c20b313f1d20b5878c4f93084aba7eb2d8303824021a37b3",
+    "sha256":  "fca67a2a38e8272cd36747dac6fedd92864ad6dae32b56e7583668dce5b77f41",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "6d2588e372cd7d892726f4e353136bf85c8628eceb03f82883e669374569a829",
-    "notes":  "• Quick shortcuts on the overview for Pro and Ultimate: change target in one click and jump to the Pro and Ultimate pages\n• Small improvements and fixes"
+    "setupSha256":  "ccc48be3bda55defd59d7f80d377071e4bdad2b2af6c7aac9a8f36c78cf372a9",
+    "notes":  "• Fixed broken characters in the overlay (dots and symbols)\n• Small improvements and fixes"
 }
