@@ -1,6 +1,8 @@
 {
-    "version":  "2.6.1",
+    "version":  "2.7.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "9fad721b552f9b08d96a37ed157400279efe43cdd069d28b63b1e4790913592b",
-    "notes":  "New app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
+    "sha256":  "5f65d1bb957553eb9d0b0c481643c78fb2ad53f0117baeb9a4246bb6ee7fc646",
+    "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
+    "setupSha256":  "d39b32c11e002a3ebfac588b9e85bc0cd39e5d5d22f5168ff5fd023b60f90c01",
+    "notes":  "Plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
 }
