@@ -1,8 +1,8 @@
 {
-    "version":  "2.8.4",
+    "version":  "2.8.5",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "e00d693719e44c0ac886e84fb71660e330aa0f7f58709b5321e6d1caf1f463a1",
+    "sha256":  "524b2f65e9eff5f90f9ac4975d597991ec7bb3f3f1a292f19082bc2f28ca1e81",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "1e5843e4d48f9fb0090499d44b8599fbe28e8ac9b696932b5523cbdc52fe0aee",
-    "notes":  "• Boost and next-match label follow your selected reward\n• Treasure Hour page and banner only for boosts on your target\n• The dashboard reopens by itself after an update\n• Changelog as short bullet points"
+    "setupSha256":  "def9db51ce601810ac1860050cc9a86b01795d0066478a27be378b72bf6dfbba",
+    "notes":  "• Small improvements and fixes"
 }
