@@ -123,7 +123,7 @@
   .plan .amt { font-size:42px; font-weight:800; margin:4px 0 0; }
   .plan ul { list-style:none; padding:0; margin:14px 0 20px; flex:1; }
   .plan li { padding:5px 0; font-size:14.5px; color:var(--text); }
-  .plan li::before { content:"âœ“  "; color:var(--green); font-weight:700; }
+  .plan li::before { content:"✓  "; color:var(--green); font-weight:700; }
   .plan.best { border-color:#3a2f6b; background:linear-gradient(160deg, #1b1830, var(--panel)); }
   .plan .btn { width:100%; }
   .faq details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
@@ -144,6 +144,7 @@
 <body>
 <div class="top"><div class="wrap">
   <img src="/icon.png" alt=""><b>ChestTracker</b><span class="sp"></span>
+  <a class="btn sm dc" href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" aria-label="Discord" style="background:#5865F2"><svg width="18" height="18" viewBox="0 0 127.14 96.36" fill="#fff" aria-hidden="true"><path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"/></svg>Discord</a>
   <select id="langBtn" aria-label="Language" onchange="location.href=this.value" style="background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer">
     <option value="/">🌐 English</option><option value="/it/">🇮🇹 Italiano</option><option value="/es/">🇪🇸 Español</option><option value="/fr/">🇫🇷 Français</option><option value="/de/">🇩🇪 Deutsch</option><option value="/pt/">🇧🇷 Português</option>
   </select>
@@ -240,25 +241,25 @@
 
   <section id="price">
     <h2 style="text-align:center" data-t="plT">Escolha seu plano</h2>
-    <p class="lead" style="text-align:center" data-t="plL">Pagamento Ãºnico, sem assinatura. Antes vocÃª testa 3 partidas de graÃ§a.</p>
+    <p class="lead" style="text-align:center" data-t="plL">Pagamento único, sem assinatura. Antes você testa 3 partidas de graça.</p>
     <div class="plans">
       <div class="card plan">
-        <h3>Normal</h3><div class="amt">â‚¬5</div>
+        <h3>Normal</h3><div class="amt">€5</div>
         <ul><li data-t="p1">Cada baú contado, automaticamente</li><li data-t="p2">Chances reais para cada recompensa</li><li data-t="p3">Overlay no jogo e cartão da partida</li><li data-t="p6">1 PC (mude quando quiser)</li></ul>
         <a class="btn lg buy" data-plan="normal" href="#" data-t="choose">Escolher</a>
       </div>
       <div class="card plan best">
-        <h3>Pro</h3><div class="amt">â‚¬10</div>
-        <ul><li data-t="inN">Tudo do Normal</li><li data-t="p4">Baús do esquadrão e recompensas da semana</li><li data-t="pr1">PrevisÃ£o da prÃ³xima partida e visÃ£o do lobby</li><li data-t="pr3">Controle de sorte e calculadora completa</li><li data-t="pr4">ExportaÃ§Ã£o CSV / JSON</li><li data-t="p6">1 PC (mude quando quiser)</li></ul>
+        <h3>Pro</h3><div class="amt">€10</div>
+        <ul><li data-t="inN">Tudo do Normal</li><li data-t="p4">Baús do esquadrão e recompensas da semana</li><li data-t="pr1">Previsão da próxima partida e visão do lobby</li><li data-t="pr3">Controle de sorte e calculadora completa</li><li data-t="pr4">Exportação CSV / JSON</li><li data-t="p6">1 PC (mude quando quiser)</li></ul>
         <a class="btn lg buy" data-plan="pro" href="#" data-t="choose">Escolher</a>
       </div>
       <div class="card plan">
-        <h3>Ultimate</h3><div class="amt">â‚¬15</div>
-        <ul><li data-t="inP">Tudo do Pro</li><li data-t="u1">Planejador da Hora do Tesouro</li><li data-t="u2">ProjeÃ§Ã£o da semana e da temporada</li><li data-t="u3">Metas com alertas</li><li data-t="u4">Overlay personalizÃ¡vel e cartÃ£o de sessÃ£o para compartilhar</li><li data-t="u5">Backup e restauraÃ§Ã£o em um PC novo</li><li data-t="u6">Acesso Ã s betas e suporte prioritÃ¡rio</li><li data-t="p7">2 PCs (mude quando quiser)</li></ul>
+        <h3>Ultimate</h3><div class="amt">€15</div>
+        <ul><li data-t="inP">Tudo do Pro</li><li data-t="u1">Planejador da Hora do Tesouro</li><li data-t="u2">Projeção da semana e da temporada</li><li data-t="u3">Metas com alertas</li><li data-t="u4">Overlay personalizável e cartão de sessão para compartilhar</li><li data-t="u5">Backup e restauração em um PC novo</li><li data-t="u6">Acesso às betas e suporte prioritário</li><li data-t="p7">2 PCs (mude quando quiser)</li></ul>
         <a class="btn lg buy" data-plan="ultimate" href="#" data-t="choose">Escolher</a>
       </div>
     </div>
-    <p class="fine" style="text-align:center" data-t="pS">Pagamento seguro pela Lemon Squeezy Â· cartÃµes, PayPal, Apple Pay (tambÃ©m por QR code do iPhone) e Google Pay, onde disponÃ­veis. No Brave ou outros navegadores, cartÃ£o e PayPal sempre funcionam.</p>
+    <p class="fine" style="text-align:center" data-t="pS">Pagamento seguro pela Lemon Squeezy · cartões, PayPal, Apple Pay (também por QR code do iPhone) e Google Pay, onde disponíveis. No Brave ou outros navegadores, cartão e PayPal sempre funcionam.</p>
     <p class="fine" style="text-align:center" data-t="pD">Após o pagamento você recebe sua chave de licença e o download do instalador, na tela e por e-mail, no celular ou no PC. Guarde-os: não podemos dar suporte se o instalador ou a chave forem perdidos.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Suporte e comunidade no Discord</a></p>
   </section>
@@ -321,7 +322,7 @@
     s3t:"Gioca", s3:"Attiva una volta i replay in Fortnite. Al resto pensa ChestTracker, ogni partita.",
     pT:"ChestTracker", pA:"Una volta", pO:"Pagamento unico · nessun abbonamento",
     p1:"Ogni forziere contato, in automatico", p2:"Probabilità reali per ogni premio", p3:"Overlay in gioco e scheda di fine partita", p4:"Forzieri della squadra e premi della settimana", p5:"Tutti gli aggiornamenti futuri inclusi", p6:"1 PC (lo sposti quando vuoi)",
-    pS:"Pagamento sicuro con Lemon Squeezy Â· carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili. Su Brave o altri browser carta e PayPal funzionano sempre.",
+    pS:"Pagamento sicuro con Lemon Squeezy · carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili. Su Brave o altri browser carta e PayPal funzionano sempre.",
     faqT:"Domande",
     q3:"Rischio il ban?", a3:"ChestTracker legge solo i file replay che Fortnite salva sul tuo PC, gli stessi della funzione Replay del gioco. Non legge la memoria del gioco, non lo modifica e non usa il tuo account Epic.",
     q2:"Mostra i forzieri in diretta durante la partita?", a2:"Il gioco sblocca il replay solo a fine partita, quindi i forzieri compaiono circa 2 secondi dopo la fine. Poi la scheda in gioco ti mostra tutto.",
