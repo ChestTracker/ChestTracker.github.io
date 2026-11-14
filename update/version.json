@@ -1,8 +1,8 @@
 {
-    "version":  "2.7.5",
+    "version":  "2.7.6",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "7fed384b3899ffe8e470feee506105b616433e494264ad7eeb7c41dea6a558ac",
+    "sha256":  "b8e3ea6a446583d0428748ce04e955cf46e601c5ee090d9caecfb14cbcf80c79",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "cbcd79221839f47566733dc723eb1e80be865cd1c23a16ef269ab22a0a445486",
-    "notes":  "Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
+    "setupSha256":  "c03ebaf5fe1477b5fb81c8e8b228dc502c834bb877166e0a090929a3d7cea767",
+    "notes":  "Automatic update fixed (the wizard now starts detached), Treasure Hour impact per reward and more statistics, Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
 }
