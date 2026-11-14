@@ -1,8 +1,8 @@
 {
-    "version":  "2.8.7",
+    "version":  "2.9.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "96bf8687d7d2d04b86bcdfa7829ba6a33ab3a135a5ce7b457efbf17ad630fde7",
+    "sha256":  "10f8bb436cf2c0407d22da0818b46c040cfcb3e58e5eb1906c7057a0f95154a2",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "37d48ae733d149ffc99e6cb484e1cc28e1eb5475971f948c58a481b17940aa2f",
-    "notes":  "• Ultimate tools split into separate pages\n• Small improvements and fixes"
+    "setupSha256":  "59225d025c47f2b63cf632ebf176a124d5f6efe54d149ab9a5ccec0a0183ef07",
+    "notes":  "• Treasure Hour times now update online within minutes (14 Nov first window extended by 2 hours)\n• Pro and Ultimate sections in the menu, locked pages open as a preview with an upgrade button\n• Choose what the overlay and the end-of-match card show (Ultimate)\n• Small improvements and fixes"
 }
