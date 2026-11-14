@@ -1,8 +1,8 @@
 {
-    "version":  "2.8.0",
+    "version":  "2.8.1",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "c131fb371ece868fdc132c1656ef57adae88eecdd277c5846826e31cf481aa5a",
+    "sha256":  "bf652d5a38f60dd3f06ee714ccbabc6eafb0af50ee588d22311b48ad37daf65e",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "d1eb483b86dc40d45e0a64da5efe69c8dbfa2e1a53f56eeb2b7f3c9f68342503",
-    "notes":  "The dashboard is now a real program window (no browser), Treasure Hour options only around a Treasure Hour, automatic update fixed (the wizard now starts detached), Treasure Hour impact per reward and more statistics, Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
+    "setupSha256":  "7603c61284cb9408f658636ecdf94d03a84ff1d1ea5b52cd571664eb2207a027",
+    "notes":  "Prizes found in replays without a name (vehicle, loading screen) are recognised and ticked automatically, the dashboard is now a real program window (no browser), Treasure Hour options only around a Treasure Hour, automatic update fixed (the wizard now starts detached), Treasure Hour impact per reward and more statistics, Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
 }
