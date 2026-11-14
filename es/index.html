@@ -161,7 +161,7 @@
       <a class="btn lg" id="mRec" href="#" target="_blank" rel="noopener" data-t="mB">Abrir recibo: clave + descarga</a>
       <button class="ghost" id="mCopy" data-t="mC">Copiar mi enlace</button>
     </div>
-    <p class="fine" data-t="mN">⚠ Guarda el instalador y tu clave de licencia en un lugar seguro (correo, gestor de contraseñas). No podemos dar soporte ni volver a enviarlos si se pierden. ¿Pagaste desde el móvil? El instalador es un programa de Windows: abre el enlace en tu PC para descargarlo e instalarlo.</p>
+    <p class="fine" data-t="mN">⚠ Guarda el instalador y tu clave de licencia en un lugar seguro (correo, gestor de contraseñas). ¿Los perdiste? Encuéntralos en «Mis pedidos» o pide ayuda en nuestro Discord. ¿Pagaste desde el móvil? El instalador es un programa de Windows: abre el enlace en tu PC para descargarlo e instalarlo.</p>
     <p class="fine"><a href="https://app.lemonsqueezy.com/my-orders" target="_blank" rel="noopener" data-t="mO">¿Perdiste el correo? Encuentra tus pedidos con tu dirección de correo</a></p>
   </section>
 
@@ -262,7 +262,7 @@
       </div>
     </div>
     <p class="fine" style="text-align:center" data-t="pS">Pago seguro con Lemon Squeezy · tarjetas, PayPal, Apple Pay (también con código QR desde el iPhone) y Google Pay, donde estén disponibles. En Brave u otros navegadores, tarjeta y PayPal siempre funcionan.</p>
-    <p class="fine" style="text-align:center" data-t="pD">Tras el pago recibes tu clave de licencia y la descarga del instalador, en pantalla y por correo, desde el móvil o el PC. Guárdalos: no podemos dar soporte si se pierde el instalador o la clave.</p>
+    <p class="fine" style="text-align:center" data-t="pD">Tras el pago recibes tu clave de licencia y la descarga del instalador, en pantalla y por correo, desde el móvil o el PC. Guárdalos en un lugar seguro. ¿Necesitas ayuda? Nuestro soporte está en Discord: abre un ticket.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Soporte y comunidad en Discord</a></p>
   </section>
   <section class="faq">
@@ -272,7 +272,7 @@
     <details><summary data-t="q1">¿Puedo usarlo en otro PC?</summary><p data-t="a1">Una clave funciona en un PC a la vez. Para moverla: Ajustes → Licencia → Desactivar este PC, y actívala en el nuevo.</p></details>
     <details><summary data-t="q5">¿Qué modos se cuentan?</summary><p data-t="a5">Battle Royale, con y sin construcción: Solo, Dúos, Tríos y Escuadras. Los demás modos se ignoran y el overlay se oculta.</p></details>
     <details><summary data-t="q6">¿Qué pasa después de pagar?</summary><p data-t="a6">Recibes enseguida tu clave de licencia y la descarga del instalador, en la pantalla de confirmación y por correo. Funciona igual en móvil y en PC: desde el móvil guarda el enlace y ábrelo en tu PC para instalar. Este navegador también recuerda tu compra, así que el botón de descarga te espera aquí cuando vuelvas.</p></details>
-    <details><summary data-t="q7">He perdido el instalador o mi clave</summary><p data-t="a7">Guárdalos bien: no podemos dar soporte si se pierden. Aun así puedes recuperarlos tú: abre «Mis pedidos» e inicia sesión con el correo con el que pagaste.</p></details>
+    <details><summary data-t="q7">He perdido el instalador o mi clave</summary><p data-t="a7">Abre «Mis pedidos» e inicia sesión con el correo con el que pagaste: ahí están tu clave de licencia y la descarga del instalador. ¿Sigues atascado? Abre un ticket en nuestro Discord y te ayudamos.</p></details>
     <details><summary data-t="q4">Windows dice «aplicación desconocida»</summary><p data-t="a4">Es normal en aplicaciones nuevas de desarrolladores pequeños: pulsa «Más información» → «Ejecutar de todas formas».</p></details>
   </section>
 
@@ -345,14 +345,14 @@
       ODDS.map(o => `<div class="row"><span>${it ? o[2] : o[1]} <span style="color:var(--muted);font-size:13px">1/${o[3].toLocaleString(it ? "it" : "en")}</span></span><b>${pct(-Math.expm1(n*Math.log1p(-1/o[3])))}</b></div>`).join("");
   }
   function setLang(v){
-    it = v; document.documentElement.lang = it ? "it" : "en";
+    it = v; /* the page keeps its own language (lang="es", "fr"...): never reset it */
     document.querySelectorAll("[data-t]").forEach(e => e.innerHTML = (it ? IT : EN)[e.dataset.t] || EN[e.dataset.t]);
     if (PRICE) document.getElementById("amount").textContent = PRICE;
     calc();
   }
   document.getElementById("per").oninput = calc; document.getElementById("mat").oninput = calc;
   setLang(document.documentElement.lang === "it"); // each language has its own page so search engines index all of them
-  document.getElementById("langBtn").value = ({en:"/", it:"/it/", es:"/es/", fr:"/fr/", de:"/de/", pt:"/pt/"})[document.documentElement.lang] || "/";
+  document.getElementById("langBtn").value = (document.documentElement.lang === "en" ? "/" : "/" + document.documentElement.lang + "/");
   // ---- purchase memory: the receipt link (licence key + download) is kept in this browser for ~13 months (the longest browsers allow)
   const ORDER_KEY = "ct_order";
   function saveOrder(o){
