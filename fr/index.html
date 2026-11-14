@@ -161,7 +161,7 @@
       <a class="btn lg" id="mRec" href="#" target="_blank" rel="noopener" data-t="mB">Ouvrir le reçu : clé + téléchargement</a>
       <button class="ghost" id="mCopy" data-t="mC">Copier mon lien</button>
     </div>
-    <p class="fine" data-t="mN">⚠ Conservez l'installateur et votre clé de licence en lieu sûr (e-mail, gestionnaire de mots de passe). Nous ne pouvons ni assurer de support ni les renvoyer en cas de perte. Payé sur téléphone ? L'installateur est un programme Windows : ouvrez le lien sur votre PC pour le télécharger et l'installer.</p>
+    <p class="fine" data-t="mN">⚠ Conservez l'installateur et votre clé de licence en lieu sûr (e-mail, gestionnaire de mots de passe). Perdus ? Retrouvez-les dans « Mes commandes » ou demandez de l'aide sur notre Discord. Payé sur téléphone ? L'installateur est un programme Windows : ouvrez le lien sur votre PC pour le télécharger et l'installer.</p>
     <p class="fine"><a href="https://app.lemonsqueezy.com/my-orders" target="_blank" rel="noopener" data-t="mO">E-mail perdu ? Retrouvez vos commandes avec votre adresse e-mail</a></p>
   </section>
 
@@ -262,7 +262,7 @@
       </div>
     </div>
     <p class="fine" style="text-align:center" data-t="pS">Paiement sécurisé par Lemon Squeezy · cartes, PayPal, Apple Pay (aussi via code QR depuis l'iPhone) et Google Pay, selon disponibilité. Sur Brave ou d'autres navigateurs, carte et PayPal fonctionnent toujours.</p>
-    <p class="fine" style="text-align:center" data-t="pD">Après le paiement, vous recevez votre clé de licence et le téléchargement de l'installateur, à l'écran et par e-mail, sur téléphone ou PC. Conservez-les : nous ne pouvons pas assurer de support si l'installateur ou la clé est perdu.</p>
+    <p class="fine" style="text-align:center" data-t="pD">Après le paiement, vous recevez votre clé de licence et le téléchargement de l'installateur, à l'écran et par e-mail, sur téléphone ou PC. Conservez-les en lieu sûr. Besoin d'aide ? Notre support est sur Discord : ouvrez un ticket.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Support et communauté sur Discord</a></p>
   </section>
   <section class="faq">
@@ -272,7 +272,7 @@
     <details><summary data-t="q1">Puis-je l'utiliser sur un autre PC ?</summary><p data-t="a1">Une clé fonctionne sur un seul PC à la fois. Pour la déplacer : Paramètres → Licence → Désactiver ce PC, puis activez-la sur le nouveau.</p></details>
     <details><summary data-t="q5">Quels modes sont comptés ?</summary><p data-t="a5">Battle Royale, avec et sans construction : Solo, Duo, Trio et Escouade. Les autres modes sont ignorés et l'overlay se masque.</p></details>
     <details><summary data-t="q6">Que se passe-t-il après le paiement ?</summary><p data-t="a6">Vous recevez aussitôt votre clé de licence et le téléchargement de l'installateur, sur l'écran de confirmation et par e-mail. Cela fonctionne pareil sur téléphone et sur PC : sur téléphone, enregistrez le lien et ouvrez-le sur votre PC pour installer. Ce navigateur se souvient aussi de votre achat : le bouton de téléchargement vous attend ici à votre retour.</p></details>
-    <details><summary data-t="q7">J'ai perdu l'installateur ou ma clé</summary><p data-t="a7">Conservez-les précieusement : nous ne pouvons pas assurer de support en cas de perte. Vous pouvez toutefois les retrouver vous-même : ouvrez « Mes commandes » et connectez-vous avec l'e-mail utilisé pour payer.</p></details>
+    <details><summary data-t="q7">J'ai perdu l'installateur ou ma clé</summary><p data-t="a7">Ouvrez « Mes commandes » et connectez-vous avec l'e-mail utilisé pour le paiement : votre clé de licence et le téléchargement de l'installateur s'y trouvent. Toujours bloqué ? Ouvrez un ticket sur notre Discord, nous vous aidons.</p></details>
     <details><summary data-t="q4">Windows affiche « application inconnue »</summary><p data-t="a4">C'est normal pour les nouvelles applis de petits développeurs : cliquez sur « Informations complémentaires » → « Exécuter quand même ».</p></details>
   </section>
 
@@ -345,14 +345,14 @@
       ODDS.map(o => `<div class="row"><span>${it ? o[2] : o[1]} <span style="color:var(--muted);font-size:13px">1/${o[3].toLocaleString(it ? "it" : "en")}</span></span><b>${pct(-Math.expm1(n*Math.log1p(-1/o[3])))}</b></div>`).join("");
   }
   function setLang(v){
-    it = v; document.documentElement.lang = it ? "it" : "en";
+    it = v; /* the page keeps its own language (lang="es", "fr"...): never reset it */
     document.querySelectorAll("[data-t]").forEach(e => e.innerHTML = (it ? IT : EN)[e.dataset.t] || EN[e.dataset.t]);
     if (PRICE) document.getElementById("amount").textContent = PRICE;
     calc();
   }
   document.getElementById("per").oninput = calc; document.getElementById("mat").oninput = calc;
   setLang(document.documentElement.lang === "it"); // each language has its own page so search engines index all of them
-  document.getElementById("langBtn").value = ({en:"/", it:"/it/", es:"/es/", fr:"/fr/", de:"/de/", pt:"/pt/"})[document.documentElement.lang] || "/";
+  document.getElementById("langBtn").value = (document.documentElement.lang === "en" ? "/" : "/" + document.documentElement.lang + "/");
   // ---- purchase memory: the receipt link (licence key + download) is kept in this browser for ~13 months (the longest browsers allow)
   const ORDER_KEY = "ct_order";
   function saveOrder(o){
