@@ -1,8 +1,8 @@
 {
-    "version":  "2.7.3",
+    "version":  "2.7.4",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "829db1bf4998b65db418752c2a78776107b5642c19fa21ba20a289cbfd1d7e21",
+    "sha256":  "7bbd8b09c95a5ac7854f16187a510bc602a5596ab3d5ad1c7accbf386743c03f",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "ec0b39d5763cefda58c6699796430d48acca125a64becaff410cfc46ca4f2590",
-    "notes":  "Instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
+    "setupSha256":  "47a57ab7ee361608742e07957a078ba48d5c25dd4c52d895c8692fd1e6548c00",
+    "notes":  "End-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
 }
