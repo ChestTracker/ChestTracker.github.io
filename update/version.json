@@ -1,8 +1,8 @@
 {
-    "version":  "2.8.1",
+    "version":  "2.8.2",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "bf652d5a38f60dd3f06ee714ccbabc6eafb0af50ee588d22311b48ad37daf65e",
+    "sha256":  "03390b68cedcbafd0bcac443546b8808ac5d57936f6e6ad3572a5e588cb249a8",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "7603c61284cb9408f658636ecdf94d03a84ff1d1ea5b52cd571664eb2207a027",
-    "notes":  "Prizes found in replays without a name (vehicle, loading screen) are recognised and ticked automatically, the dashboard is now a real program window (no browser), Treasure Hour options only around a Treasure Hour, automatic update fixed (the wizard now starts detached), Treasure Hour impact per reward and more statistics, Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
+    "setupSha256":  "e930043f3ca5ab3bdea236d1417adfdc61385a4460826558437207e681b94e8e",
+    "notes":  "Automatic updates are completely invisible (no window in front of the game), prizes found in replays without a name (vehicle, loading screen) are recognised and ticked automatically, the dashboard is now a real program window (no browser), Treasure Hour options only around a Treasure Hour, automatic update fixed (the wizard now starts detached), Treasure Hour impact per reward and more statistics, Treasure Hour boost shown next to each boosted reward (odds and extra chance), end-of-match card: your chests, squad and total in one row, instant language change and automatic settings save, updates checked every 30 s, Treasure Hour details (odds and extra chance per reward), new Treasure Hour statistics page (per-window impact, best hours, trends, luck), 12 languages (Russian, Chinese, Japanese, Korean, Turkish, Polish added), plans (Normal / Pro / Ultimate), new Ultimate tools, new app icon, free 3-match trial, 6 languages, squad chests and overlay fixes."
 }
