@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChestTracker – Contador de cofres y probabilidades de tesoros para Fortnite</title>
+<meta name="description" content="ChestTracker cuenta cada cofre que abres o destruyes en Fortnite Battle Royale y muestra tus probabilidades reales del token de la Tienda Pirata, la skin dorada, el vehículo y cada recompensa de Treasure Hunters. App para Windows con overlay en el juego.">
+<meta name="keywords" content="fortnite chest counter, chest tracker, treasure hunters, pirate shop token odds, fortnite treasure tracker, contatore forzieri fortnite, probabilità token negozio pirata">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="eZgJfUtDtWoEM2AxnB4hVf0RWaiIvuQsVLGOAoztnag" />
+<link rel="canonical" href="https://chesttracker.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://chesttracker.github.io/">
+<link rel="alternate" hreflang="it" href="https://chesttracker.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://chesttracker.github.io/es/">
+<link rel="alternate" hreflang="fr" href="https://chesttracker.github.io/fr/">
+<link rel="alternate" hreflang="de" href="https://chesttracker.github.io/de/">
+<link rel="alternate" hreflang="pt" href="https://chesttracker.github.io/pt/">
+<link rel="alternate" hreflang="x-default" href="https://chesttracker.github.io/">
+<meta property="og:locale" content="es_ES"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="ChestTracker">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ChestTracker – Contador de cofres y probabilidades de tesoros para Fortnite">
+<meta property="og:description" content="Every chest counted. Your real treasure odds, next-match forecast and in-game overlay.">
+<meta property="og:url" content="https://chesttracker.github.io/es/">
+<meta property="og:image" content="https://chesttracker.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ChestTracker","applicationCategory":"GameApplication","operatingSystem":"Windows 10, Windows 11",
+ "description":"Chest counter and treasure odds tracker for Fortnite Battle Royale: counts every chest opened or destroyed from your replays and shows your odds for every Treasure Hunters reward.",
+ "url":"https://chesttracker.github.io/","image":"https://chesttracker.github.io/icon.png","author":{"@type":"Organization","name":"CDRas"},"inLanguage":["en","it"],
+ "offers":{"@type":"Offer","price":"4.99","priceCurrency":"EUR","url":"https://chesttracker.github.io/#price"},
+ "featureList":["Counts every chest opened or destroyed from replays","Real odds for every Treasure Hunters reward","Next-match forecast","In-game overlay under the minimap","Squad chests","Weekly rewards with pictures"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"Can I get banned for using ChestTracker?","acceptedAnswer":{"@type":"Answer","text":"ChestTracker only reads the replay files Fortnite saves on your PC, the same files the in-game replay viewer uses. It does not read the game's memory, does not change the game and does not use your Epic account."}},
+ {"@type":"Question","name":"Does ChestTracker show chests live during the match?","acceptedAnswer":{"@type":"Answer","text":"The game unlocks the replay only when the match ends, so your chests appear about 2 seconds after the match."}},
+ {"@type":"Question","name":"Which Fortnite modes are counted?","acceptedAnswer":{"@type":"Answer","text":"Battle Royale, Build and Zero Build: Solo, Duos, Trios and Squads. Other modes are ignored."}},
+ {"@type":"Question","name":"Can I use ChestTracker on another PC?","acceptedAnswer":{"@type":"Answer","text":"One licence key works on one PC at a time. Deactivate it in Settings and activate it on the new PC."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"ChestTracker","url":"https://chesttracker.github.io/","inLanguage":["en","it"]}
+</script>
+<link rel="icon" href="/icon.png">
+<style>
+  :root { --bg:#0b0d12; --panel:#141822; --panel2:#1a1f2c; --line:#232838; --text:#e8eaf0; --muted:#8d93a5; --gold:#f2b84b; --purple:#b48cff; --violet:#7c5cff; --green:#6ee096; --red:#ff7a7a; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a { color:var(--purple); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 16px; }
+  /* top bar */
+  .top { position:sticky; top:0; z-index:10; background:rgba(11,13,18,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .top .wrap { display:flex; align-items:center; gap:12px; height:60px; }
+  .top img { width:32px; height:32px; }
+  .top b { font-size:18px; }
+  .top .sp { flex:1; }
+  .lang { color:var(--muted); cursor:pointer; font-size:14px; background:none; border:0; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:linear-gradient(135deg, var(--violet), var(--purple)); color:#fff; text-decoration:none; font-weight:700; border-radius:12px; border:0; cursor:pointer; }
+  .btn.sm { padding:9px 16px; font-size:14px; }
+  .btn.lg { padding:16px 34px; font-size:18px; box-shadow:0 10px 30px rgba(124,92,255,.35); }
+  .btn[aria-disabled="true"] { opacity:.55; pointer-events:none; }
+  .ghost { color:var(--text); text-decoration:none; font-weight:600; padding:16px 22px; border:1px solid var(--line); border-radius:12px; }
+  button.ghost { background:none; cursor:pointer; font:inherit; font-weight:600; }
+  /* hero */
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; padding:56px 0 40px; }
+  .kick { color:var(--purple); font-weight:700; letter-spacing:.05em; font-size:13px; margin-bottom:12px; }
+  h1 { font-size:clamp(32px, 5vw, 52px); line-height:1.07; margin:0 0 16px; letter-spacing:-.02em; }
+  h1 span { color:var(--gold); }
+  .sub { color:var(--muted); font-size:18px; margin:0 0 26px; max-width:540px; }
+  .ctas { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .trust { display:flex; gap:16px; flex-wrap:wrap; color:var(--muted); font-size:13.5px; margin-top:18px; }
+  .trust span::before { content:"✓ "; color:var(--green); font-weight:700; }
+  /* overlay mock */
+  .mock { background:linear-gradient(160deg, #1d2333, #10131b); border:1px solid #2b3246; border-radius:18px; padding:18px; box-shadow:0 30px 60px rgba(0,0,0,.45); }
+  .mock .tag { display:inline-block; font-size:11px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:2px 9px; margin-bottom:12px; }
+  .mock .row { display:flex; justify-content:space-between; align-items:baseline; padding:8px 0; border-bottom:1px solid #262c3d; font-size:14px; }
+  .mock .row:last-child { border:0; }
+  .mock .big { font-size:40px; font-weight:800; line-height:1; }
+  .mock .grn { color:var(--green); font-weight:700; }
+  .mock .gold { color:var(--gold); font-weight:700; }
+  .mock .bar { height:8px; background:#262c3d; border-radius:9px; overflow:hidden; margin:10px 0 4px; }
+  .mock .bar i { display:block; height:100%; width:43%; background:linear-gradient(90deg, var(--violet), var(--purple)); }
+  /* sections */
+  section { padding:34px 0; }
+  h2 { font-size:clamp(24px, 3.4vw, 34px); margin:0 0 8px; letter-spacing:-.01em; }
+  .lead { color:var(--muted); margin:0 0 24px; font-size:17px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:22px; }
+  .card h3 { margin:0 0 6px; font-size:17px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; }
+  .card .i { font-size:26px; margin-bottom:10px; }
+  .vs { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .vs ul { margin:0; padding-left:0; list-style:none; }
+  .vs li { padding:8px 0; border-bottom:1px solid var(--line); color:var(--muted); }
+  .vs li:last-child { border:0; }
+  .vs .no li::before { content:"✕  "; color:var(--red); font-weight:700; }
+  .vs .yes { border-color:#3a2f6b; background:linear-gradient(160deg, #1b1830, var(--panel)); }
+  .vs .yes li { color:var(--text); }
+  .vs .yes li::before { content:"✓  "; color:var(--green); font-weight:700; }
+  /* calculator */
+  .calc { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:center; }
+  .calc label { display:block; font-size:14px; color:var(--muted); margin:12px 0 6px; }
+  .calc input[type=range] { width:100%; accent-color:var(--violet); }
+  .calc .val { float:right; color:var(--text); font-weight:700; }
+  .res .row { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--line); }
+  .res .row:last-child { border:0; }
+  .res b { color:var(--gold); }
+  .fine { color:var(--muted); font-size:12.5px; margin-top:10px; }
+  /* steps */
+  .steps { counter-reset:s; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
+  .steps .card::before { counter-increment:s; content:counter(s); display:inline-grid; place-items:center; width:30px; height:30px; border-radius:50%; background:var(--violet); font-weight:800; margin-bottom:10px; }
+  /* price */
+  .price { max-width:460px; margin:0 auto; text-align:center; border-color:#3a2f6b; background:linear-gradient(160deg, #1b1830, var(--panel)); }
+  .price .amt { font-size:48px; font-weight:800; margin:6px 0 2px; }
+  .price .once { color:var(--muted); margin-bottom:16px; }
+  .price ul { list-style:none; padding:0; margin:0 0 22px; text-align:left; }
+  .price li { padding:7px 0; }
+  .price li::before { content:"✓  "; color:var(--green); font-weight:700; }
+  .faq details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .faq summary { cursor:pointer; font-weight:600; }
+  .faq p { color:var(--muted); margin:10px 0 0; }
+  .final { text-align:center; padding:50px 0 30px; }
+  footer { color:var(--muted); font-size:13px; padding:30px 0 90px; border-top:1px solid var(--line); margin-top:30px; }
+  .mbar { display:none; }
+  @media (max-width:820px) {
+    .hero, .calc, .vs { grid-template-columns:1fr; }
+    .hero { padding-top:32px; }
+    .top .btn { display:none; }
+    .mbar { display:flex; position:fixed; left:12px; right:12px; bottom:12px; z-index:20; }
+    .mbar .btn { flex:1; padding:15px; font-size:17px; }
+  }
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <img src="/icon.png" alt=""><b>ChestTracker</b><span class="sp"></span>
+  <span class="lang" id="langBtn"><a href="/" hreflang="en" lang="en">English</a> · <a href="/it/" hreflang="it" lang="it">Italiano</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/fr/" hreflang="fr" lang="fr">Français</a> · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/pt/" hreflang="pt" lang="pt">Português</a></span>
+  <a class="btn sm buy" href="#price" data-t="buyS">Conseguir</a>
+</div></div>
+
+<div class="wrap">
+  <section id="mine" class="card" style="display:none;margin-top:20px;border-color:#2f6b4a;background:linear-gradient(160deg,#142a20,var(--panel))">
+    <h2 style="margin:0 0 6px" data-t="mT">✓ Tu compra de ChestTracker</h2>
+    <p class="lead" style="margin:0 0 14px" data-t="mL">Tu clave de licencia y la descarga del instalador están en tu recibo y en el correo que te enviamos.</p>
+    <div class="ctas">
+      <a class="btn lg" id="mRec" href="#" target="_blank" rel="noopener" data-t="mB">Abrir recibo: clave + descarga</a>
+      <button class="ghost" id="mCopy" data-t="mC">Copiar mi enlace</button>
+    </div>
+    <p class="fine" data-t="mN">⚠ Guarda el instalador y tu clave de licencia en un lugar seguro (correo, gestor de contraseñas). No podemos dar soporte ni volver a enviarlos si se pierden. ¿Pagaste desde el móvil? El instalador es un programa de Windows: abre el enlace en tu PC para descargarlo e instalarlo.</p>
+    <p class="fine"><a href="https://app.lemonsqueezy.com/my-orders" target="_blank" rel="noopener" data-t="mO">¿Perdiste el correo? Encuentra tus pedidos con tu dirección de correo</a></p>
+  </section>
+
+  <div class="hero">
+    <div>
+      <div class="kick" data-t="kick">CONTADOR DE COFRES Y PROBABILIDADES DE TESOROS PARA FORTNITE</div>
+      <h1 data-t="h1">Deja de adivinar.<br><span>Conoce tus probabilidades reales.</span></h1>
+      <p class="sub" data-t="sub">ChestTracker cuenta cada cofre que abres o destruyes, partida tras partida, y te dice exactamente cuánto te falta para la ficha de la Tienda Pirata, la skin dorada y el resto de recompensas.</p>
+      <div class="ctas">
+        <a class="btn lg buy" href="#price" data-t="buy">Conseguir ChestTracker</a>
+        <a class="ghost" href="#how" data-t="how">Cómo funciona</a>
+      </div>
+      <div class="trust"><span data-t="t1">Windows 10 / 11</span><span data-t="t2">Totalmente automático</span><span data-t="t3">Nunca toca el juego</span><span data-t="t4">Actualizaciones gratis</span><span data-t="t5">Pruébalo 3 partidas gratis</span></div>
+    </div>
+    <div class="mock" aria-label="Example of the in-game card">
+      <span class="tag" data-t="ex">Ejemplo · tarjeta de fin de partida</span>
+      <div class="row"><span data-t="m1">Tus cofres en esta partida</span><span class="big">23</span></div>
+      <div class="row"><span data-t="m2">Escuadra</span><span class="grn">+31</span></div>
+      <div class="row"><span data-t="m3">Cofres contados en total</span><span><b>2,297</b></span></div>
+      <div class="row" style="display:block"><div style="display:flex;justify-content:space-between"><span data-t="m4">Vehículo · probabilidad hasta ahora</span><span class="gold">28.4%</span></div><div class="bar"><i></i></div></div>
+      <div class="row"><span data-t="m5">Algún tesoro en la próxima partida</span><span class="grn">12.1%</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2 data-t="vsT">Jugar a ciegas o jugar con datos</h2>
+    <p class="lead" data-t="vsL">Las probabilidades son por cofre. Si no cuentas tus cofres, no sabes dónde estás.</p>
+    <div class="vs">
+      <div class="card no"><h3 data-t="noT">Sin ChestTracker</h3><ul>
+        <li data-t="no1">No sabes cuántos cofres has abierto de verdad</li>
+        <li data-t="no2">Olvidas los cofres destruidos (también cuentan)</li>
+        <li data-t="no3">No sabes si merece la pena otra partida</li>
+        <li data-t="no4">Cuentas también las recompensas que ya tienes</li></ul></div>
+      <div class="card yes"><h3 data-t="yesT">Con ChestTracker</h3><ul>
+        <li data-t="yes1">Cada cofre contado desde tus repeticiones, automáticamente</li>
+        <li data-t="yes2">Abiertos y destruidos: normales, raros, sprite, enterrados</li>
+        <li data-t="yes3">Tu probabilidad exacta para cada recompensa, ahora mismo</li>
+        <li data-t="yes4">Previsión de la próxima partida y bonus de la Hora del Tesoro</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="calcT">¿Cuántos cofres necesitas?</h2>
+    <p class="lead" data-t="calcL">Pruébalo con las probabilidades oficiales por cofre.</p>
+    <div class="calc card">
+      <div>
+        <label><span data-t="c1">Cofres por partida</span> <span class="val" id="vPer">18</span></label>
+        <input type="range" id="per" min="5" max="50" value="18">
+        <label><span data-t="c2">Partidas</span> <span class="val" id="vM">100</span></label>
+        <input type="range" id="mat" min="10" max="2000" step="10" value="100">
+      </div>
+      <div class="res" id="res"></div>
+    </div>
+    <p class="fine" data-t="calcF">Probabilidad de conseguir al menos uno, con las probabilidades publicadas por cofre. ChestTracker lo hace con tu número real de cofres.</p>
+  </section>
+
+  <section>
+    <h2 data-t="featT">Todo en una app pequeña</h2>
+    <p class="lead" data-t="featL">Se abre con Fortnite y se cierra con él. Tú solo juegas.</p>
+    <div class="grid">
+      <div class="card"><div class="i">📦</div><h3 data-t="f1t">Cada cofre</h3><p data-t="f1">Normales, raros, sprite, enterrados: abiertos o destruidos, contados unos 2 segundos después de cada partida.</p></div>
+      <div class="card"><div class="i">🎯</div><h3 data-t="f2t">Probabilidades reales</h3><p data-t="f2">Probabilidad exacta de cada recompensa, con los bonus de la Hora del Tesoro y sin las recompensas que ya tienes.</p></div>
+      <div class="card"><div class="i">🎮</div><h3 data-t="f3t">Overlay en el juego</h3><p data-t="f3">Una pequeña tarjeta bajo el minimapa con la previsión de tu próxima partida y las estadísticas al terminar.</p></div>
+      <div class="card"><div class="i">👥</div><h3 data-t="f4t">Cofres de la escuadra</h3><p data-t="f4">Mira cuántos cofres abrieron tus compañeros junto a los tuyos.</p></div>
+      <div class="card"><div class="i">🗓️</div><h3 data-t="f5t">Recompensas semanales</h3><p data-t="f5">Las recompensas de la semana con imágenes, actualizadas solas cada semana.</p></div>
+      <div class="card"><div class="i">🛡️</div><h3 data-t="f6t">Seguro</h3><p data-t="f6">Solo lee los archivos de repetición que el juego guarda en tu PC. Nunca toca el juego, su memoria ni tu cuenta de Epic.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2 data-t="howT">Listo en 2 minutos</h2>
+    <p class="lead" data-t="howL">Sin configuración, sin cuenta, sin ajustes que aprender.</p>
+    <div class="steps">
+      <div class="card"><h3 data-t="s1t">Compra</h3><p data-t="s1">Paga de forma segura. Tu clave de licencia y el enlace de descarga llegan enseguida por correo.</p></div>
+      <div class="card"><h3 data-t="s2t">Instala</h3><p data-t="s2">Ejecuta el instalador y pega tu clave. Se activa en tu PC.</p></div>
+      <div class="card"><h3 data-t="s3t">Juega</h3><p data-t="s3">Activa las repeticiones en Fortnite una vez. ChestTracker hace el resto, partida tras partida.</p></div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="card price">
+      <h2 data-t="pT">ChestTracker</h2>
+      <div class="amt" id="amount" data-t="pA">Una vez</div>
+      <div class="once" data-t="pO">Pago único · sin suscripción</div>
+      <div class="once" style="color:var(--green)" data-t="pF">🎁 Prueba gratis: tus primeras 3 partidas son gratis</div>
+      <ul>
+        <li data-t="p1">Cada cofre contado, automáticamente</li>
+        <li data-t="p2">Probabilidades reales para cada recompensa</li>
+        <li data-t="p3">Overlay en el juego y tarjeta de partida</li>
+        <li data-t="p4">Cofres de la escuadra y recompensas semanales</li>
+        <li data-t="p5">Todas las actualizaciones futuras incluidas</li>
+        <li data-t="p6">1 PC (puedes moverlo cuando quieras)</li>
+      </ul>
+      <a class="btn lg buy" style="width:100%" href="#" data-t="buy">Conseguir ChestTracker</a>
+      <p class="fine" data-t="pS">Pago seguro con Lemon Squeezy · tarjetas, PayPal, Apple Pay</p>
+      <p class="fine" data-t="pD">Tras el pago recibes tu clave de licencia y la descarga del instalador, en pantalla y por correo, desde el móvil o el PC. Guárdalos: no podemos dar soporte si se pierde el instalador o la clave.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 data-t="faqT">Preguntas</h2>
+    <details><summary data-t="q3">¿Me pueden banear?</summary><p data-t="a3">ChestTracker solo lee los archivos de repetición que Fortnite guarda en tu PC, los mismos que usa el visor de repeticiones del juego. No lee la memoria del juego, no lo modifica y no usa tu cuenta de Epic.</p></details>
+    <details><summary data-t="q2">¿Muestra los cofres en directo durante la partida?</summary><p data-t="a2">El juego desbloquea la repetición solo al terminar la partida, así que tus cofres aparecen unos 2 segundos después. Entonces la tarjeta del juego lo muestra todo.</p></details>
+    <details><summary data-t="q1">¿Puedo usarlo en otro PC?</summary><p data-t="a1">Una clave funciona en un PC a la vez. Para moverla: Ajustes → Licencia → Desactivar este PC, y actívala en el nuevo.</p></details>
+    <details><summary data-t="q5">¿Qué modos se cuentan?</summary><p data-t="a5">Battle Royale, con y sin construcción: Solo, Dúos, Tríos y Escuadras. Los demás modos se ignoran y el overlay se oculta.</p></details>
+    <details><summary data-t="q6">¿Qué pasa después de pagar?</summary><p data-t="a6">Recibes enseguida tu clave de licencia y la descarga del instalador, en la pantalla de confirmación y por correo. Funciona igual en móvil y en PC: desde el móvil guarda el enlace y ábrelo en tu PC para instalar. Este navegador también recuerda tu compra, así que el botón de descarga te espera aquí cuando vuelvas.</p></details>
+    <details><summary data-t="q7">He perdido el instalador o mi clave</summary><p data-t="a7">Guárdalos bien: no podemos dar soporte si se pierden. Aun así puedes recuperarlos tú: abre «Mis pedidos» e inicia sesión con el correo con el que pagaste.</p></details>
+    <details><summary data-t="q4">Windows dice «aplicación desconocida»</summary><p data-t="a4">Es normal en aplicaciones nuevas de desarrolladores pequeños: pulsa «Más información» → «Ejecutar de todas formas».</p></details>
+  </section>
+
+  <div class="final">
+    <h2 data-t="finT">Tu próximo cofre podría ser el bueno.</h2>
+    <p class="lead" data-t="finL">Sabe exactamente dónde estás.</p>
+    <a class="btn lg buy" href="#price" data-t="buy">Conseguir ChestTracker</a>
+  </div>
+
+  <footer data-t="foot">ChestTracker de CDRas. No está afiliado, respaldado ni patrocinado por Epic Games. Fortnite es una marca de Epic Games, Inc. Motor de repeticiones: ChestCounter (licencia MIT).</footer>
+</div>
+<div class="mbar"><a class="btn buy" href="#price" data-t="buy">Conseguir ChestTracker</a></div>
+<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+
+<script>
+  // Set once the store exists
+  const BUY_URL = "";   // Lemon Squeezy checkout link
+  const PRICE = "";     // e.g. "€4.99"
+  const IT = {
+    buyS:"Acquista", buy:"Acquista ChestTracker", how:"Come funziona",
+    kick:"CONTATORE FORZIERI E PROBABILITÀ TESORI PER FORTNITE",
+    mT:"✓ Il tuo acquisto di ChestTracker", mL:"La chiave di licenza e il download del setup sono nella ricevuta e nell'email che ti abbiamo mandato.",
+    mB:"Apri la ricevuta: chiave + download", mC:"Copia il mio link",
+    mN:"⚠ Conserva il file di setup e la chiave di licenza in un posto sicuro (email, gestore di password). Non possiamo dare assistenza né reinviarli se li perdi. Hai pagato da telefono? Il setup è un programma per Windows: apri il link sul PC per scaricarlo e installarlo.",
+    mO:"Hai perso l'email? Ritrova i tuoi ordini con il tuo indirizzo email",
+    pD:"Dopo il pagamento ricevi la chiave di licenza e il download del setup, a schermo e via email, da telefono o da PC. Salvali: non possiamo dare assistenza se perdi il file di setup o la chiave.",
+    q6:"Cosa succede dopo il pagamento?", a6:"Ricevi subito la chiave di licenza e il download del setup, sulla schermata di conferma e via email. Funziona uguale da telefono e da PC: da telefono salva il link e aprilo sul PC per installare. Questo browser ricorda anche il tuo acquisto, così il pulsante di download ti aspetta qui quando torni.",
+    q7:"Ho perso il file di setup o la chiave", a7:"Conservali bene: non possiamo dare assistenza se li perdi. Puoi comunque ritrovarli da solo: apri \"I miei ordini\" e accedi con l'email con cui hai pagato.",
+    h1:"Basta tirare a indovinare.<br><span>Scopri le tue vere probabilità.</span>",
+    sub:"ChestTracker conta ogni forziere che apri o distruggi, partita dopo partita, e ti dice esattamente quanto sei vicino al token del Negozio Pirata, alla skin d'oro e a ogni altro premio.",
+    t1:"Windows 10 / 11", t2:"Tutto automatico", t3:"Non tocca mai il gioco", t4:"Aggiornamenti gratis",
+    ex:"Esempio · scheda di fine partita", m1:"I tuoi forzieri in questa partita", m2:"Squadra", m3:"Forzieri contati in totale", m4:"Veicolo · probabilità finora", m5:"Un tesoro nella prossima partita",
+    vsT:"Giocare alla cieca o giocare informati", vsL:"Le probabilità sono per forziere. Se non conti i forzieri, non sai a che punto sei.",
+    noT:"Senza ChestTracker", no1:"Non sai quanti forzieri hai aperto davvero", no2:"Dimentichi i forzieri distrutti (contano anche quelli)", no3:"Non sai se vale la pena fare un'altra partita", no4:"Conti anche i premi che hai già",
+    yesT:"Con ChestTracker", yes1:"Ogni forziere contato dai replay, in automatico", yes2:"Aperti e distrutti, normali, rari, sprite, sepolti", yes3:"La tua probabilità esatta per ogni premio, adesso", yes4:"Previsione della prossima partita e boost delle Treasure Hour",
+    calcT:"Quanti forzieri ti servono?", calcL:"Provalo con le probabilità ufficiali per forziere.", c1:"Forzieri per partita", c2:"Partite",
+    calcF:"Probabilità di almeno un drop, con le probabilità per forziere pubblicate. ChestTracker lo fa con i tuoi forzieri reali.",
+    featT:"Tutto in una piccola app", featL:"Si apre con Fortnite, si chiude con lui. Tu giochi e basta.",
+    f1t:"Ogni forziere", f1:"Normali, rari, sprite, sepolti: aperti o distrutti, contati circa 2 secondi dopo ogni partita.",
+    f2t:"Probabilità reali", f2:"Probabilità esatta per ogni premio, con i boost delle Treasure Hour e senza i premi che hai già.",
+    f3t:"Overlay in gioco", f3:"Una piccola scheda sotto la minimappa con la previsione della prossima partita e le statistiche di fine partita.",
+    f4t:"Forzieri della squadra", f4:"Vedi quanti forzieri hanno aperto i tuoi compagni, accanto ai tuoi.",
+    f5t:"Premi della settimana", f5:"I premi della settimana con le foto, aggiornati da soli ogni settimana.",
+    f6t:"Sicuro", f6:"Legge solo i file replay che il gioco salva sul tuo PC. Non tocca mai il gioco, la sua memoria o il tuo account Epic.",
+    howT:"Pronto in 2 minuti", howL:"Niente configurazioni, niente account, niente impostazioni da imparare.",
+    s1t:"Acquista", s1:"Paghi in modo sicuro. Chiave di licenza e link per scaricarlo ti arrivano subito via email.",
+    s2t:"Installa", s2:"Avvia il setup e incolla la chiave. Si attiva sul tuo PC.",
+    s3t:"Gioca", s3:"Attiva una volta i replay in Fortnite. Al resto pensa ChestTracker, ogni partita.",
+    pT:"ChestTracker", pA:"Una volta", pO:"Pagamento unico · nessun abbonamento",
+    p1:"Ogni forziere contato, in automatico", p2:"Probabilità reali per ogni premio", p3:"Overlay in gioco e scheda di fine partita", p4:"Forzieri della squadra e premi della settimana", p5:"Tutti gli aggiornamenti futuri inclusi", p6:"1 PC (lo sposti quando vuoi)",
+    pS:"Pagamento sicuro con Lemon Squeezy · carte, PayPal, Apple Pay",
+    faqT:"Domande",
+    q3:"Rischio il ban?", a3:"ChestTracker legge solo i file replay che Fortnite salva sul tuo PC, gli stessi della funzione Replay del gioco. Non legge la memoria del gioco, non lo modifica e non usa il tuo account Epic.",
+    q2:"Mostra i forzieri in diretta durante la partita?", a2:"Il gioco sblocca il replay solo a fine partita, quindi i forzieri compaiono circa 2 secondi dopo la fine. Poi la scheda in gioco ti mostra tutto.",
+    q1:"Posso usarlo su un altro PC?", a1:"Una chiave funziona su un PC alla volta. Per spostarla: Impostazioni → Licenza → Disattiva questo PC, poi attivala su quello nuovo.",
+    q5:"Quali modalità conta?", a5:"Battaglia Reale, Costruzione e Zero Build: Singolo, Coppie, Trii e Squadre. Le altre modalità vengono ignorate e l'overlay si nasconde.",
+    q4:"Windows dice \"app sconosciuta\"", a4:"È normale per le app nuove di piccoli sviluppatori: clicca \"Ulteriori informazioni\" → \"Esegui comunque\".",
+    finT:"Il prossimo forziere potrebbe essere quello giusto.", finL:"Sappi esattamente a che punto sei.",
+    foot:"ChestTracker di CDRas. Non affiliato, approvato o sponsorizzato da Epic Games. Fortnite è un marchio di Epic Games, Inc. Motore replay: ChestCounter (licenza MIT)."
+  };
+  const EN = {}; document.querySelectorAll("[data-t]").forEach(e => EN[e.dataset.t] = e.innerHTML);
+  let it = false;
+  const ODDS = [["token","Pirate Shop token","Token Negozio Pirata",137500],["vehicle","Vehicle","Veicolo",7813],["pick","Pickaxe / back bling","Piccone / dorso",568],["gizmo","Gizmo","Gizmo",127]];
+  function calc(){
+    const per = +document.getElementById("per").value, m = +document.getElementById("mat").value, n = per*m;
+    document.getElementById("vPer").textContent = per; document.getElementById("vM").textContent = m.toLocaleString(it ? "it" : "en");
+    const pct = p => (p >= .9999 ? ">99.99" : (p*100).toFixed(p < .01 ? 3 : 1)) + "%";
+    document.getElementById("res").innerHTML = `<div class="row"><span>${it ? "Forzieri" : "Chests"}</span><b style="color:var(--text)">${n.toLocaleString(it ? "it" : "en")}</b></div>` +
+      ODDS.map(o => `<div class="row"><span>${it ? o[2] : o[1]} <span style="color:var(--muted);font-size:13px">1/${o[3].toLocaleString(it ? "it" : "en")}</span></span><b>${pct(-Math.expm1(n*Math.log1p(-1/o[3])))}</b></div>`).join("");
+  }
+  function setLang(v){
+    it = v; document.documentElement.lang = it ? "it" : "en";
+    document.querySelectorAll("[data-t]").forEach(e => e.innerHTML = (it ? IT : EN)[e.dataset.t] || EN[e.dataset.t]);
+    if (PRICE) document.getElementById("amount").textContent = PRICE;
+    calc();
+  }
+  document.getElementById("per").oninput = calc; document.getElementById("mat").oninput = calc;
+  setLang(document.documentElement.lang === "it"); // each language has its own page (/ and /it/) so search engines index both
+  // ---- purchase memory: the receipt link (licence key + download) is kept in this browser for ~13 months (the longest browsers allow)
+  const ORDER_KEY = "ct_order";
+  function saveOrder(o){
+    const s = JSON.stringify(o);
+    try { localStorage.setItem(ORDER_KEY, s); } catch (e) {}
+    try { document.cookie = ORDER_KEY + "=" + encodeURIComponent(s) + "; max-age=34560000; path=/; SameSite=Lax; Secure"; } catch (e) {}
+  }
+  function loadOrder(){
+    try { const s = localStorage.getItem(ORDER_KEY); if (s) return JSON.parse(s); } catch (e) {}
+    try { const m = document.cookie.match(/(?:^|; )ct_order=([^;]*)/); if (m) return JSON.parse(decodeURIComponent(m[1])); } catch (e) {}
+    return null;
+  }
+  // the checkout hands back the order: look for the receipt link anywhere inside it
+  function findReceipt(x, d){
+    if (!x || d > 7) return "";
+    if (typeof x === "string") return /^https:\/\/[a-z0-9.-]*lemonsqueezy\.com\/my-orders\//i.test(x) ? x : "";
+    if (typeof x === "object") for (const k in x) { const r = findReceipt(x[k], d + 1); if (r) return r; }
+    return "";
+  }
+  function showMine(o){
+    document.getElementById("mine").style.display = "block";
+    const url = o && o.receipt ? o.receipt : "https://app.lemonsqueezy.com/my-orders";
+    document.getElementById("mRec").href = url;
+    document.getElementById("mCopy").onclick = () => { try { navigator.clipboard.writeText(url); const b = document.getElementById("mCopy"); const t = b.innerHTML; b.textContent = "✓"; setTimeout(() => b.innerHTML = t, 1500); } catch (e) {} };
+  }
+  const saved = loadOrder();
+  if (saved) showMine(saved);
+  else if (/[?&]purchased=1/.test(location.search)) showMine({ receipt: "" });
+
+  // buy buttons: until the store is live they only scroll to the price box; then they open the checkout
+  const TEST_URL = "https://chesttracker.lemonsqueezy.com/checkout/buy/e5b16e55-6ac1-406a-a689-4cc22b4987d5"; // test mode: open the page with #test to try it
+  const CHECKOUT = location.hash === "#test" ? TEST_URL : BUY_URL;
+  document.querySelectorAll("#price .buy, .final .buy").forEach(b => {
+    if (CHECKOUT) { b.href = CHECKOUT + "?embed=1&media=0"; b.classList.add("lemonsqueezy-button"); }
+    else if (b.closest("#price")) b.setAttribute("aria-disabled", "true");
+  });
+  window.addEventListener("load", () => {
+    if (!CHECKOUT || !window.createLemonSqueezy) return;
+    try {
+      createLemonSqueezy();
+      LemonSqueezy.Setup({ eventHandler: ev => {
+        if (ev && ev.event === "Checkout.Success") {
+          const o = { at: Date.now(), receipt: findReceipt(ev.data, 0) };
+          saveOrder(o); showMine(o); window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      } });
+    } catch (e) {}
+  });
+</script>
+</body>
+</html>
