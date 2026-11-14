@@ -123,7 +123,7 @@
   .plan .amt { font-size:42px; font-weight:800; margin:4px 0 0; }
   .plan ul { list-style:none; padding:0; margin:14px 0 20px; flex:1; }
   .plan li { padding:5px 0; font-size:14.5px; color:var(--text); }
-  .plan li::before { content:"âœ“  "; color:var(--green); font-weight:700; }
+  .plan li::before { content:"✓  "; color:var(--green); font-weight:700; }
   .plan.best { border-color:#3a2f6b; background:linear-gradient(160deg, #1b1830, var(--panel)); }
   .plan .btn { width:100%; }
   .faq details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; }
@@ -240,25 +240,25 @@
 
   <section id="price">
     <h2 style="text-align:center" data-t="plT">Elige tu plan</h2>
-    <p class="lead" style="text-align:center" data-t="plL">Pago Ãºnico, sin suscripciÃ³n. Primero pruebas 3 partidas gratis.</p>
+    <p class="lead" style="text-align:center" data-t="plL">Pago único, sin suscripción. Primero pruebas 3 partidas gratis.</p>
     <div class="plans">
       <div class="card plan">
-        <h3>Normal</h3><div class="amt">â‚¬5</div>
+        <h3>Normal</h3><div class="amt">€5</div>
         <ul><li data-t="p1">Cada cofre contado, automáticamente</li><li data-t="p2">Probabilidades reales para cada recompensa</li><li data-t="p3">Overlay en el juego y tarjeta de partida</li><li data-t="p6">1 PC (puedes moverlo cuando quieras)</li></ul>
         <a class="btn lg buy" data-plan="normal" href="#" data-t="choose">Elegir</a>
       </div>
       <div class="card plan best">
-        <h3>Pro</h3><div class="amt">â‚¬10</div>
-        <ul><li data-t="inN">Todo lo de Normal</li><li data-t="p4">Cofres de la escuadra y recompensas semanales</li><li data-t="pr1">PrevisiÃ³n de la prÃ³xima partida y vista del lobby</li><li data-t="pr3">Control de suerte y calculadora completa de probabilidades</li><li data-t="pr4">ExportaciÃ³n CSV / JSON</li><li data-t="p6">1 PC (puedes moverlo cuando quieras)</li></ul>
+        <h3>Pro</h3><div class="amt">€10</div>
+        <ul><li data-t="inN">Todo lo de Normal</li><li data-t="p4">Cofres de la escuadra y recompensas semanales</li><li data-t="pr1">Previsión de la próxima partida y vista del lobby</li><li data-t="pr3">Control de suerte y calculadora completa de probabilidades</li><li data-t="pr4">Exportación CSV / JSON</li><li data-t="p6">1 PC (puedes moverlo cuando quieras)</li></ul>
         <a class="btn lg buy" data-plan="pro" href="#" data-t="choose">Elegir</a>
       </div>
       <div class="card plan">
-        <h3>Ultimate</h3><div class="amt">â‚¬15</div>
-        <ul><li data-t="inP">Todo lo de Pro</li><li data-t="u1">Planificador de la Hora del Tesoro</li><li data-t="u2">ProyecciÃ³n de semana y temporada</li><li data-t="u3">Objetivos con avisos</li><li data-t="u4">Overlay personalizable y tarjeta de sesiÃ³n para compartir</li><li data-t="u5">Copia de seguridad y restauraciÃ³n en un PC nuevo</li><li data-t="u6">Acceso a betas y soporte prioritario</li><li data-t="p7">2 PC (muÃ©velos cuando quieras)</li></ul>
+        <h3>Ultimate</h3><div class="amt">€15</div>
+        <ul><li data-t="inP">Todo lo de Pro</li><li data-t="u1">Planificador de la Hora del Tesoro</li><li data-t="u2">Proyección de semana y temporada</li><li data-t="u3">Objetivos con avisos</li><li data-t="u4">Overlay personalizable y tarjeta de sesión para compartir</li><li data-t="u5">Copia de seguridad y restauración en un PC nuevo</li><li data-t="u6">Acceso a betas y soporte prioritario</li><li data-t="p7">2 PC (muévelos cuando quieras)</li></ul>
         <a class="btn lg buy" data-plan="ultimate" href="#" data-t="choose">Elegir</a>
       </div>
     </div>
-    <p class="fine" style="text-align:center" data-t="pS">Pago seguro con Lemon Squeezy Â· tarjetas, PayPal, Apple Pay (tambiÃ©n con cÃ³digo QR desde el iPhone) y Google Pay, donde estÃ©n disponibles. En Brave u otros navegadores, tarjeta y PayPal siempre funcionan.</p>
+    <p class="fine" style="text-align:center" data-t="pS">Pago seguro con Lemon Squeezy · tarjetas, PayPal, Apple Pay (también con código QR desde el iPhone) y Google Pay, donde estén disponibles. En Brave u otros navegadores, tarjeta y PayPal siempre funcionan.</p>
     <p class="fine" style="text-align:center" data-t="pD">Tras el pago recibes tu clave de licencia y la descarga del instalador, en pantalla y por correo, desde el móvil o el PC. Guárdalos: no podemos dar soporte si se pierde el instalador o la clave.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Soporte y comunidad en Discord</a></p>
   </section>
@@ -321,7 +321,7 @@
     s3t:"Gioca", s3:"Attiva una volta i replay in Fortnite. Al resto pensa ChestTracker, ogni partita.",
     pT:"ChestTracker", pA:"Una volta", pO:"Pagamento unico · nessun abbonamento",
     p1:"Ogni forziere contato, in automatico", p2:"Probabilità reali per ogni premio", p3:"Overlay in gioco e scheda di fine partita", p4:"Forzieri della squadra e premi della settimana", p5:"Tutti gli aggiornamenti futuri inclusi", p6:"1 PC (lo sposti quando vuoi)",
-    pS:"Pagamento sicuro con Lemon Squeezy Â· carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili. Su Brave o altri browser carta e PayPal funzionano sempre.",
+    pS:"Pagamento sicuro con Lemon Squeezy · carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili. Su Brave o altri browser carta e PayPal funzionano sempre.",
     faqT:"Domande",
     q3:"Rischio il ban?", a3:"ChestTracker legge solo i file replay che Fortnite salva sul tuo PC, gli stessi della funzione Replay del gioco. Non legge la memoria del gioco, non lo modifica e non usa il tuo account Epic.",
     q2:"Mostra i forzieri in diretta durante la partita?", a2:"Il gioco sblocca il replay solo a fine partita, quindi i forzieri compaiono circa 2 secondi dopo la fine. Poi la scheda in gioco ti mostra tutto.",
