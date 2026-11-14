@@ -135,7 +135,9 @@
 <body>
 <div class="top"><div class="wrap">
   <img src="/icon.png" alt=""><b>ChestTracker</b><span class="sp"></span>
-  <span class="lang" id="langBtn"><a href="/" hreflang="en" lang="en">English</a> · <a href="/it/" hreflang="it" lang="it">Italiano</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/fr/" hreflang="fr" lang="fr">Français</a> · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/pt/" hreflang="pt" lang="pt">Português</a></span>
+  <select id="langBtn" aria-label="Language" onchange="location.href=this.value" style="background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer">
+    <option value="/">🌐 English</option><option value="/it/">🇮🇹 Italiano</option><option value="/es/">🇪🇸 Español</option><option value="/fr/">🇫🇷 Français</option><option value="/de/">🇩🇪 Deutsch</option><option value="/pt/">🇧🇷 Português</option>
+  </select>
   <a class="btn sm buy" href="#price" data-t="buyS">Quero</a>
 </div></div>
 
@@ -264,6 +266,7 @@
     <a class="btn lg buy" href="#price" data-t="buy">Quero o ChestTracker</a>
   </div>
 
+  <nav class="fine" style="text-align:center;margin-top:30px" aria-label="Languages"><a href="/" hreflang="en">English</a> · <a href="/it/" hreflang="it">Italiano</a> · <a href="/es/" hreflang="es">Español</a> · <a href="/fr/" hreflang="fr">Français</a> · <a href="/de/" hreflang="de">Deutsch</a> · <a href="/pt/" hreflang="pt">Português</a></nav>
   <footer data-t="foot">ChestTracker por CDRas. Sem afiliação, aprovação ou patrocínio da Epic Games. Fortnite é uma marca da Epic Games, Inc. Motor de replay: ChestCounter (licença MIT).</footer>
 </div>
 <div class="mbar"><a class="btn buy" href="#price" data-t="buy">Quero o ChestTracker</a></div>
@@ -332,7 +335,8 @@
     calc();
   }
   document.getElementById("per").oninput = calc; document.getElementById("mat").oninput = calc;
-  setLang(document.documentElement.lang === "it"); // each language has its own page (/ and /it/) so search engines index both
+  setLang(document.documentElement.lang === "it"); // each language has its own page so search engines index all of them
+  document.getElementById("langBtn").value = ({en:"/", it:"/it/", es:"/es/", fr:"/fr/", de:"/de/", pt:"/pt/"})[document.documentElement.lang] || "/";
   // ---- purchase memory: the receipt link (licence key + download) is kept in this browser for ~13 months (the longest browsers allow)
   const ORDER_KEY = "ct_order";
   function saveOrder(o){
