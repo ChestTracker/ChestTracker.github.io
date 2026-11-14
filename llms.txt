@@ -1,0 +1,23 @@
+# ChestTracker
+
+> ChestTracker is a Windows app for Fortnite Battle Royale that counts every chest you open or destroy, shows your real odds for every Treasure Hunters reward (Pirate Shop token, gold outfit, vehicle, pickaxe/back bling, Jam Track, loading screen, gizmo) and forecasts your next match. By CDRas. Not affiliated with Epic Games.
+
+ChestTracker is the Fortnite chest counter and treasure odds tracker. In Italian: contatore di forzieri e probabilità dei tesori per Fortnite.
+
+## What it does
+- Counts every chest from the replay files Fortnite saves on your PC: normal, rare, sprite, buried; opened and destroyed.
+- Exact probability for every reward, with Treasure Hour boosts and rewards you already own taken out.
+- Next-match forecast (normal match and good match) and a luck check on gizmos.
+- In-game overlay under the minimap, end-of-match card, squad chests, weekly rewards with pictures.
+- Starts with Fortnite and closes with it. Light on memory and CPU.
+- Safe: it only reads replay files. It never reads or changes the game, its memory or your Epic account.
+
+## Facts
+- Platform: Windows 10 / 11. Languages: English and Italian (follows Windows).
+- Price: 4.99 EUR, one payment, no subscription. One licence key works on one PC at a time. Free updates.
+- Chests are counted about 2 seconds after the match ends (Fortnite unlocks the replay only then); live counting during the match is not possible.
+- Counted modes: Battle Royale Build and Zero Build, Solo, Duos, Trios, Squads.
+
+## Pages
+- [Home (English)](https://chesttracker.github.io/): features, odds calculator, FAQ, buy
+- [Home (Italiano)](https://chesttracker.github.io/it/): funzioni, calcolatore, domande frequenti, acquisto
