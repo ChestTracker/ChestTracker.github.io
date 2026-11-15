@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.13",
+    "version":  "2.9.15",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "550e8faf1885b65f1a81517fdf7e3c2acb56d61a292f271f8c34f6150b305659",
+    "sha256":  "9e900f2912dc4d12d131b65755f03dac3560a1e283adcc648624ae11adb4a8d7",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "cd35d36a75665cbc7458c2882c5b285a1fdc249a3295fcd634ecb11cd6109351",
-    "notes":  "- New: Support the creator card with the creator code and the Creative islands, most played right now first\n- Small improvements and fixes"
+    "setupSha256":  "195e6e02d200d8a72bdba2618d343c46c30d9c020de2de1711637d9f9fdfcb8c",
+    "notes":  "- New: Support creator page in the sidebar; Item Shop button applies the creator code\n- Small improvements and fixes"
 }
