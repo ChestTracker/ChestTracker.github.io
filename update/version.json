@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.8",
+    "version":  "2.9.9",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "f33166f410e82a2dae919ed57e2c2e6cfb78f58bd1d6a4c7b9cb1167a0cdd472",
+    "sha256":  "5e21c582728e4a32d57d6d8f7440a5d09b4ad7c63a060db23212c1f69ed10a0b",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "059476b12cc4afe0c9956e32d175c2d18644e4d01466d73767d0327855a6f4db",
-    "notes":  "- Overlay: choose where it goes (8 spots around the game or under the minimap) and its size, for every plan\n- Small improvements and fixes"
+    "setupSha256":  "8903b1c43d40c6e3c82efebf08a169f097294d3a63273f6ab70dce8302c134fb",
+    "notes":  "- Overlay shows the full reward name again\n- Small improvements and fixes"
 }
