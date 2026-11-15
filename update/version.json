@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.11",
+    "version":  "2.9.12",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "0a0b31c104e306e60021a78853248fc6c78691f22f155d8319cbf0ce241a9f1d",
+    "sha256":  "f1642cbb05a5634d26b80894314b851896b442365489f0bedea052ff210f13bc",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "da62288fe32fc4783dd61921a3a2c06b18aab126caf3a03d05bbebf888722770",
-    "notes":  "- When a prize picture is missing, the icon is shown with the item or car model name under it\n- Small improvements and fixes"
+    "setupSha256":  "da489f50bcd4318fba67a02e32393beaf8da05b73829f74b91c865df0a39e1f3",
+    "notes":  "- Ranked matches are now counted too (treasures drop there)\n- The detected-in-a-replay banner ignores rewards found in earlier weeks\n- Small improvements and fixes"
 }
