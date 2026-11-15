@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.5",
+    "version":  "2.9.6",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "8c5ec95d6fdeb3ac3e682f5e99013d9b675bd5f7ff60eff62db8bb4765096b54",
+    "sha256":  "f008264eaa721d1e7e71f0ce0a9c956319fbe1359a1917d89207f6d9c1d8503f",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "2158f0d44041652a6bca3e0953d2598608f81aa89d5e4a6b029636427e533a56",
-    "notes":  "• Cleaner overview: only the important numbers, no long explanations\n• Small improvements and fixes"
+    "setupSha256":  "65e03678b5eca48f6ed2a3f7ebe236f9a48160236829111544942370d1c626f6",
+    "notes":  "- Fixed broken characters in the update notes\n- Small improvements and fixes"
 }
