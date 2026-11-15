@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.15",
+    "version":  "2.9.16",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "9e900f2912dc4d12d131b65755f03dac3560a1e283adcc648624ae11adb4a8d7",
+    "sha256":  "d722346829e875a740e5ab537affbb5bb131dbb791b414a0635b746ff17cebcc",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "195e6e02d200d8a72bdba2618d343c46c30d9c020de2de1711637d9f9fdfcb8c",
-    "notes":  "- New: Support creator page in the sidebar; Item Shop button applies the creator code\n- Small improvements and fixes"
+    "setupSha256":  "a6350e33372b40fafb872550b414ad6410213661141e3e2509e03b52a611edbc",
+    "notes":  "- New: redesigned Support creator page; sidebar fits small windows (compact rail with More menu); no double scrollbar\n- Small improvements and fixes"
 }
