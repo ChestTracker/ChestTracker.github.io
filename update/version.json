@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.6",
+    "version":  "2.9.7",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "f008264eaa721d1e7e71f0ce0a9c956319fbe1359a1917d89207f6d9c1d8503f",
+    "sha256":  "aee7e34371b90f3cd010aa819680ae15473a19f99cf685fb164c1a6c6e8fb56d",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "65e03678b5eca48f6ed2a3f7ebe236f9a48160236829111544942370d1c626f6",
-    "notes":  "- Fixed broken characters in the update notes\n- Small improvements and fixes"
+    "setupSha256":  "7c15f91ef9109a1d2af7e3fbc1dcafce5898ffd12e551f5a5dc0a7d1a6edf904",
+    "notes":  "- Planner now always projects to the end of the season (5 Dec) with the scheduled Treasure Hours: the percentage you reach at your pace\n- Small improvements and fixes"
 }
