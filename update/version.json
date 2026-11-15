@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.4",
+    "version":  "2.9.5",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "d7cfa0460fa6299ac38b1e6f0413c2a9bc9d440d9d58fb6e5a4f9fca618f22c4",
+    "sha256":  "8c5ec95d6fdeb3ac3e682f5e99013d9b675bd5f7ff60eff62db8bb4765096b54",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "16587a7628599dd7384b591d2a095a1d0ec08d778709a8e82b8336cf22e640e9",
-    "notes":  "• The big number is now the chance to get your target from now on: next match, next hour, next 10 matches, until the Treasure Hour ends\n• Overlay and end-of-match card show the chance for the next match\n• Small improvements and fixes"
+    "setupSha256":  "2158f0d44041652a6bca3e0953d2598608f81aa89d5e4a6b029636427e533a56",
+    "notes":  "• Cleaner overview: only the important numbers, no long explanations\n• Small improvements and fixes"
 }
