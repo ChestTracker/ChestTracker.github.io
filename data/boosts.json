@@ -1,5 +1,6 @@
 {
-  "updated": "2026-11-14T22:30:00Z",
+  "updated": "2026-11-15T01:00:00Z",
+  "seasonEnd": "2026-12-05T00:00:00",
   "note": "Treasure Hour schedule used by ChestTracker. Times are US Eastern (UTC-5). Updated when Epic changes a time (for example a Treasure Hour made longer).",
   "windows": [
     { "name": "Treasure Hour 7 Nov (1)", "start": "2026-11-07T14:00:00-05:00", "end": "2026-11-07T16:00:00-05:00", "mults": { "pirate": 1.5, "gold": 7.5, "vehicle": 10 } },
