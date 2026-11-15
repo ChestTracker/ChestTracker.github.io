@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.7",
+    "version":  "2.9.8",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "aee7e34371b90f3cd010aa819680ae15473a19f99cf685fb164c1a6c6e8fb56d",
+    "sha256":  "f33166f410e82a2dae919ed57e2c2e6cfb78f58bd1d6a4c7b9cb1167a0cdd472",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "7c15f91ef9109a1d2af7e3fbc1dcafce5898ffd12e551f5a5dc0a7d1a6edf904",
-    "notes":  "- Planner now always projects to the end of the season (5 Dec) with the scheduled Treasure Hours: the percentage you reach at your pace\n- Small improvements and fixes"
+    "setupSha256":  "059476b12cc4afe0c9956e32d175c2d18644e4d01466d73767d0327855a6f4db",
+    "notes":  "- Overlay: choose where it goes (8 spots around the game or under the minimap) and its size, for every plan\n- Small improvements and fixes"
 }
