@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.10",
+    "version":  "2.9.11",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "4368b9d84b8413946ed6fbeaa5f75a3153407231becf072163f270e93c046bdc",
+    "sha256":  "0a0b31c104e306e60021a78853248fc6c78691f22f155d8319cbf0ce241a9f1d",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "c49359c50d74e358489723265ed177f2a671dd393f792d699b26e3046bd96721",
-    "notes":  "- This week Jam Track picture is found again (new Hatsune Miku track)\n- Overview: a Prizes section with the picture of every reward, pictures also in the rewards table\n- Small improvements and fixes"
+    "setupSha256":  "da62288fe32fc4783dd61921a3a2c06b18aab126caf3a03d05bbebf888722770",
+    "notes":  "- When a prize picture is missing, the icon is shown with the item or car model name under it\n- Small improvements and fixes"
 }
