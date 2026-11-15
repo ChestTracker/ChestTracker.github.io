@@ -1,8 +1,8 @@
 {
-    "version":  "2.10.0",
+    "version":  "2.10.1",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "51ad4fcc70ff81c3a7e35080d698436652a989f18283c5643d44680759ad391a",
+    "sha256":  "c83308810b65537fcbd329bc935fdf2b889b5c443122874795e4325ec49267eb",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "5f97a9a70432eca38ebcb0b5bfe990be739865134698665561a3e99cff2eee03",
-    "notes":  "- New: built-in replay reader gives every Pro player the squad chests seen in the replay (minimum) with a reliability percentage\n- Small improvements and fixes"
+    "setupSha256":  "dc1f0eca8d16a990dd4fe79c529721a3bafc9734b693a1d45f3ab83e1ca0a534",
+    "notes":  "- Fix: the sidebar button now widens and narrows the sidebar on any window size\n- Small improvements and fixes"
 }
