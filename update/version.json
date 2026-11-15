@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.9",
+    "version":  "2.9.10",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "5e21c582728e4a32d57d6d8f7440a5d09b4ad7c63a060db23212c1f69ed10a0b",
+    "sha256":  "4368b9d84b8413946ed6fbeaa5f75a3153407231becf072163f270e93c046bdc",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "8903b1c43d40c6e3c82efebf08a169f097294d3a63273f6ab70dce8302c134fb",
-    "notes":  "- Overlay shows the full reward name again\n- Small improvements and fixes"
+    "setupSha256":  "c49359c50d74e358489723265ed177f2a671dd393f792d699b26e3046bd96721",
+    "notes":  "- This week Jam Track picture is found again (new Hatsune Miku track)\n- Overview: a Prizes section with the picture of every reward, pictures also in the rewards table\n- Small improvements and fixes"
 }
