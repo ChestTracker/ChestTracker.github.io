@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.2",
+    "version":  "2.9.3",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "fca67a2a38e8272cd36747dac6fedd92864ad6dae32b56e7583668dce5b77f41",
+    "sha256":  "e09d6c71820716260b505fcc78629673774914b3bc583a288e983cde47f2d8ab",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "ccc48be3bda55defd59d7f80d377071e4bdad2b2af6c7aac9a8f36c78cf372a9",
-    "notes":  "• Fixed broken characters in the overlay (dots and symbols)\n• Small improvements and fixes"
+    "setupSha256":  "5bc913b1c004999859f380e9d6432d501c706d92bd2931c01319684703f4c350",
+    "notes":  "• Treasure Hour now starts and ends by itself: timer, percentages and overlay update at once, no restart needed\n• Small improvements and fixes"
 }
