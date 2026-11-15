@@ -1,6 +1,6 @@
 # ChestTracker
 
-> ChestTracker is a Windows app for Fortnite Battle Royale that counts every chest you open or destroy, shows your real odds for every Treasure Hunters reward (Pirate Shop token, gold outfit, vehicle, pickaxe/back bling, Jam Track, loading screen, gizmo) and forecasts your next match. By CDRas. Not affiliated with Epic Games.
+> ChestTracker is a Windows app for Fortnite Battle Royale that counts every chest you open or destroy, shows your real odds for every Treasure Hunters reward (Pirate Shop token, gold outfit, vehicle, pickaxe/back bling, Jam Track, loading screen, gizmo) and forecasts your next match. Not affiliated with Epic Games.
 
 ChestTracker (also written "Chest Tracker" or "Fortnite Chest Tracker") is the Fortnite chest counter and treasure odds tracker for Treasure Hunters. It is not related to the Total Battle clan tool at chesttracker.com. In Italian: contatore di forzieri e probabilità dei tesori per Fortnite.
 
