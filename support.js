@@ -33,7 +33,7 @@ function list(){
 }
 function draw(){
   box.className="";box.style.cssText="margin-top:20px";
-  box.innerHTML='<div class="cc-hero"><small>SUPPORT-A-CREATOR</small><div class="code">'+CODE+'</div><p>'+t[1]+'</p><div class="cc-btns"><button class="cc-btn main" data-copy="'+CODE+'">'+t[3]+' '+t[2].toLowerCase()+'</button><a class="cc-btn" href="https://www.fortnite.com/item-shop?creator-code=cdras" target="_blank" rel="noopener">🛒 Item Shop</a></div></div><div class="cc-grid" id="ccl">'+list()+'</div>';
+  box.innerHTML='<div class="cc-hero"><small>SUPPORT-A-CREATOR</small><div class="code">'+CODE+'</div><p>'+t[1]+'</p><div class="cc-btns"><button class="cc-btn main" data-copy="'+CODE+'">'+t[3]+' '+t[2].toLowerCase()+'</button><a class="cc-btn" href="https://www.fortnite.com/item-shop?creator-code=cdras" target="_blank" rel="noopener">🛒 Item Shop</a></div></div>';
 }
 box.addEventListener("click",function(e){
   var b=e.target.closest("[data-copy]"); if(!b) return; var v=b.getAttribute("data-copy"), o=b.getAttribute("data-o")||b.textContent; b.setAttribute("data-o",o);
@@ -41,8 +41,4 @@ box.addEventListener("click",function(e){
   try{navigator.clipboard.writeText(v).then(ok,ok);}catch(x){var a=document.createElement("textarea");a.value=v;document.body.appendChild(a);a.select();try{document.execCommand("copy");}catch(y){}a.remove();ok();}
 });
 draw();
-Promise.all(MAPS.map(function(m){
-  return fetch("https://api.fortnite.com/ecosystem/v1/islands/"+m[0]+"/metrics/minute").then(function(r){return r.json();}).then(function(j){var v=(j.peakCCU||[]).map(function(x){return x.value;}).filter(function(x){return x!=null;});live[m[0]]=v.length?v[v.length-1]:0;}).catch(function(){})
-   .then(function(){return fetch("https://api.fortnite.com/ecosystem/v1/islands/"+m[0]+"/metrics/day?interval=week");}).then(function(r){return r.json();}).then(function(j){week[m[0]]=(j.plays||[]).reduce(function(a,x){return a+(x.value||0);},0);}).catch(function(){});
-})).then(function(){var l=document.getElementById("ccl"); if(l) l.innerHTML=list();});
 })();
