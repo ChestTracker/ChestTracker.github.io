@@ -1,8 +1,8 @@
 {
-    "version":  "2.9.17",
+    "version":  "2.10.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "208a4933320d3e5f8d9f7efb55e93b129dc37f8a344d11efcdfc3117662dd52e",
+    "sha256":  "51ad4fcc70ff81c3a7e35080d698436652a989f18283c5643d44680759ad391a",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "ab436b03b56bc8f56ae060b6c830b3177087f0dc2df164e1f1dec670ce102639",
-    "notes":  "- Match card: your chests exact, squad chests shown as a minimum; sidebar: icons-only toggle\n- Small improvements and fixes"
+    "setupSha256":  "5f97a9a70432eca38ebcb0b5bfe990be739865134698665561a3e99cff2eee03",
+    "notes":  "- New: built-in replay reader gives every Pro player the squad chests seen in the replay (minimum) with a reliability percentage\n- Small improvements and fixes"
 }

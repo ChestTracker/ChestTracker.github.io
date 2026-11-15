@@ -1,0 +1,10 @@
+{
+  "version": "1",
+  "sha256": "b82ea881c84bdd325ee7e809f06d8daaa130cd483021041a0e06d242ac574c76",
+  "parts": [
+    "https://chesttracker.github.io/update/ChestReader-1.bin",
+    "https://chesttracker.github.io/update/ChestReader-2.bin",
+    "https://chesttracker.github.io/update/ChestReader-3.bin",
+    "https://chesttracker.github.io/update/ChestReader-4.bin"
+  ]
+}
