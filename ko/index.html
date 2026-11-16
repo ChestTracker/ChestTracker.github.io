@@ -271,8 +271,6 @@
     <p class="fine" style="text-align:center" data-t="pD">결제 후 라이선스 키와 설치 파일 다운로드를 화면과 이메일로 받습니다(휴대폰·PC 모두). 안전하게 보관하세요. 도움이 필요하신가요? 지원은 Discord에서 티켓을 열어 주세요.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Discord 지원 및 커뮤니티</a></p>
   </section>
-  <section id="upgrade"></section>
-  <script src="/upgrade.js" defer></script>
   <section id="creator" class="card" style="margin-top:20px"></section>
   <script src="/support.js" defer></script>
   <section class="faq">
@@ -400,7 +398,7 @@
 
   // buy buttons: until the store is live they only scroll to the price box; then they open the checkout
   // one checkout link per plan: empty until the store is live. Open the page with #test to try the test-mode links.
-  const PLAN_URL = { normal: "", pro: "", ultimate: "" };
+  const PLAN_URL = { normal: "https://buy.polar.sh/polar_cl_7Sjlt8ulm1hJ1EXB1voAMeRLZnTu9KT6ILWXp3vttNi", pro: "https://buy.polar.sh/polar_cl_B7eJbjS56O3dqDrlICw6KddLgsCO5yCYqEE3u4C1cEs", ultimate: "https://buy.polar.sh/polar_cl_46nO3YV8M196YtC5Vje6YltGufvvjyYYoqkXI2Jd8VE" };
   const TEST_URL = { normal: "", pro: "", ultimate: "" };
   const URLS = location.hash === "#test" ? TEST_URL : PLAN_URL;
   const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
