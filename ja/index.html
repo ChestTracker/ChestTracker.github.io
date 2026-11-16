@@ -271,6 +271,8 @@
     <p class="fine" style="text-align:center" data-t="pD">お支払い後、ライセンスキーとセットアップのダウンロードが画面とメールで届きます（スマホでも PC でも）。安全な場所に保管してください。お困りですか？サポートは Discord で。チケットを開いてください。</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Discord でサポートとコミュニティ</a></p>
   </section>
+  <section id="upgrade"></section>
+  <script src="/upgrade.js" defer></script>
   <section id="creator" class="card" style="margin-top:20px"></section>
   <script src="/support.js" defer></script>
   <section class="faq">
@@ -382,13 +384,19 @@
   }
   function showMine(o){
     document.getElementById("mine").style.display = "block";
-    const url = o && o.receipt ? o.receipt : "https://polar.sh/chesttracker/portal";
+    const fresh = o && o.receipt && (Date.now() - (o.at || 0)) < 45 * 60 * 1000; const url = fresh ? o.receipt : "https://polar.sh/chesttracker/portal"; /* the session link Polar adds after payment only lives for a short time */
     document.getElementById("mRec").href = url;
     document.getElementById("mCopy").onclick = () => { try { navigator.clipboard.writeText(url); const b = document.getElementById("mCopy"); const t = b.innerHTML; b.textContent = "✓"; setTimeout(() => b.innerHTML = t, 1500); } catch (e) {} };
   }
   const saved = loadOrder();
   if (saved) showMine(saved);
-  else if (/[?&]purchased=1/.test(location.search)) showMine({ receipt: "" });
+  else if (/[?&]purchased=1/.test(location.search)) {
+    const m = location.search.match(/[?&]customer_session_token=([^&]+)/);
+    const o = { at: Date.now(), receipt: m ? "https://polar.sh/chesttracker/portal/overview?customer_session_token=" + m[1] : "" };
+    if (o.receipt) saveOrder(o);
+    showMine(o);
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
+  }
 
   // buy buttons: until the store is live they only scroll to the price box; then they open the checkout
   // one checkout link per plan: empty until the store is live. Open the page with #test to try the test-mode links.
