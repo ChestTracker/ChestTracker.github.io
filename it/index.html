@@ -400,7 +400,7 @@
 
   // buy buttons: until the store is live they only scroll to the price box; then they open the checkout
   // one checkout link per plan: empty until the store is live. Open the page with #test to try the test-mode links.
-  const PLAN_URL = { normal: "", pro: "", ultimate: "" };
+  const PLAN_URL = { normal: "https://buy.polar.sh/polar_cl_7Sjlt8ulm1hJ1EXB1voAMeRLZnTu9KT6ILWXp3vttNi", pro: "https://buy.polar.sh/polar_cl_B7eJbjS56O3dqDrlICw6KddLgsCO5yCYqEE3u4C1cEs", ultimate: "https://buy.polar.sh/polar_cl_46nO3YV8M196YtC5Vje6YltGufvvjyYYoqkXI2Jd8VE" };
   const TEST_URL = { normal: "", pro: "", ultimate: "" };
   const URLS = location.hash === "#test" ? TEST_URL : PLAN_URL;
   const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
