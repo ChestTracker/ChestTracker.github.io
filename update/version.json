@@ -1,8 +1,8 @@
 {
-    "version":  "2.11.0",
+    "version":  "2.11.1",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "589bc3f803cc77e763c7dfda8016cfdedc5003812fa2bcd39ef4e2611684c163",
+    "sha256":  "510bc4b2860cc13a29249474b1355ccca61b8fa770f61cb3c7ed3ddcd9071335",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "c1fbfdf71e6bc9cb48f70731cad584e63c828ab610eaf36dda3c7ba054ef235c",
-    "notes":  "- Licences now run on Polar (new shop)\n- Small improvements and fixes"
+    "setupSha256":  "0400fa7b79058f4ec9ae371330bdc5821275c7744f79aed12f4964f73b4f7953",
+    "notes":  "- Upgrade prices: the difference minus 2 EUR (use the upgrade command on Discord)\n- Small improvements and fixes"
 }
