@@ -1,8 +1,8 @@
 {
-    "version":  "2.12.1",
+    "version":  "2.13.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "fc7d57ac4261b28856b0f4a896e853269c9f5263f4f9777997e9eb78986ac969",
+    "sha256":  "c721c3b2bd8e85d3e2652eff3b60b4cddbb68f38f2ec131d8c5f7dcfd911e280",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "5a0c65bd3fe31c0a9d02ec9c00e5a1fd8c0448d476e34dda6c903c66dd6b8b60",
-    "notes":  "- Free early-user access is gone: every PC needs a licence key or the 3 free games\n- Deactivate this PC now stops everything and sends you to the dashboard: free games or key\n- Teammate chests now come from the built-in reader (ChestAlert no longer used)"
+    "setupSha256":  "f7e5eed4f86c77f0fdb0175e7ef339261c7baaae77ffda4b126bdbe14891e85c",
+    "notes":  "- New light installer ChestTracker-Free: 3 free games, the engine downloads itself, then a licence key unlocks everything\n- Free early-user access is gone: every PC needs a licence key or the 3 free games\n- Deactivate this PC stops everything and sends you to the dashboard"
 }
