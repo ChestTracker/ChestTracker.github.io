@@ -1,8 +1,8 @@
 {
-    "version":  "2.10.1",
+    "version":  "2.11.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "c83308810b65537fcbd329bc935fdf2b889b5c443122874795e4325ec49267eb",
+    "sha256":  "589bc3f803cc77e763c7dfda8016cfdedc5003812fa2bcd39ef4e2611684c163",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "dc1f0eca8d16a990dd4fe79c529721a3bafc9734b693a1d45f3ab83e1ca0a534",
-    "notes":  "- Fix: the sidebar button now widens and narrows the sidebar on any window size\n- Small improvements and fixes"
+    "setupSha256":  "c1fbfdf71e6bc9cb48f70731cad584e63c828ab610eaf36dda3c7ba054ef235c",
+    "notes":  "- Licences now run on Polar (new shop)\n- Small improvements and fixes"
 }
