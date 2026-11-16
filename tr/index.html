@@ -168,7 +168,7 @@
       <button class="ghost" id="mCopy" data-t="mC">Bağlantımı kopyala</button>
     </div>
     <p class="fine" data-t="mN">⚠ Kurulum dosyasını ve lisans anahtarını güvenli bir yerde saklayın (e-posta, parola yöneticisi). Kaybettiniz mi? "Siparişlerim" bölümünde yeniden bulun veya Discord'umuzda yardım isteyin. Telefondan mı ödediniz? Kurulum bir Windows programıdır: indirip kurmak için bağlantıyı bilgisayarınızda açın.</p>
-    <p class="fine"><a href="https://app.lemonsqueezy.com/my-orders" target="_blank" rel="noopener" data-t="mO">E-postayı mı kaybettiniz? Siparişlerinizi e-posta adresinizle bulun</a></p>
+    <p class="fine"><a href="https://polar.sh/chesttracker/portal" target="_blank" rel="noopener" data-t="mO">E-postayı mı kaybettiniz? Siparişlerinizi e-posta adresinizle bulun</a></p>
   </section>
 
   <div class="hero">
@@ -267,7 +267,7 @@
         <a class="btn lg buy" data-plan="ultimate" href="#" data-t="choose">Seç</a>
       </div>
     </div>
-    <p class="fine" style="text-align:center" data-t="pS">Lemon Squeezy ile güvenli ödeme · kartlar, PayPal, Apple Pay (iPhone'dan QR kodla da) ve Google Pay, uygun olduğunda.</p>
+    <p class="fine" style="text-align:center" data-t="pS">Polar ile güvenli ödeme · kartlar, PayPal, Apple Pay (iPhone'dan QR kodla da) ve Google Pay, uygun olduğunda.</p>
     <p class="fine" style="text-align:center" data-t="pD">Ödemeden sonra lisans anahtarınızı ve kurulum indirmesini ekranda ve e-postayla alırsınız, telefonda veya bilgisayarda. Güvenli bir yerde saklayın. Yardım mı lazım? Desteğimiz Discord'da: bir bilet açın.</p>
     <p class="fine" style="text-align:center"><a href="https://discord.gg/uJuVQ3FyYH" target="_blank" rel="noopener" data-t="disc">Discord'da destek ve topluluk</a></p>
   </section>
@@ -295,11 +295,10 @@
   <p class="legal" style="text-align:center;color:var(--muted);font-size:13px;margin:-14px 0 80px"><a href="/legal/#terms" style="color:inherit">Şartlar</a> · <a href="/legal/#privacy" style="color:inherit">Gizlilik</a> · <a href="/legal/#refunds" style="color:inherit">İadeler</a></p>
 </div>
 <div class="mbar"><a class="btn buy" href="#price" data-t="buy">ChestTracker'ı edinin</a></div>
-<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 
 <script>
   // Set once the store exists
-  const BUY_URL = "";   // Lemon Squeezy checkout link
+  const BUY_URL = "";   // Polar checkout link
   const PRICE = "";     // e.g. "€4.99"
   const IT = {
     buyS:"Acquista", buy:"Acquista ChestTracker", how:"Come funziona",
@@ -333,7 +332,7 @@
     s3t:"Gioca", s3:"Attiva una volta i replay in Fortnite. Al resto pensa ChestTracker, ogni partita.",
     pT:"ChestTracker", pA:"Una volta", pO:"Pagamento unico · nessun abbonamento",
     p1:"Ogni forziere contato, in automatico", p2:"Probabilità reali per ogni premio", p3:"Overlay in gioco e scheda di fine partita", p4:"Forzieri della squadra e premi della settimana", p5:"Tutti gli aggiornamenti futuri inclusi", p6:"1 PC (lo sposti quando vuoi)",
-    pS:"Pagamento sicuro con Lemon Squeezy · carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili.",
+    pS:"Pagamento sicuro con Polar · carte, PayPal, Apple Pay (anche con codice QR dall'iPhone) e Google Pay, dove disponibili.",
     faqT:"Domande",
     q3:"Rischio il ban?", a3:"ChestTracker legge solo i file replay che Fortnite salva sul tuo PC, gli stessi della funzione Replay del gioco. Non legge la memoria del gioco, non lo modifica e non usa il tuo account Epic.",
     q2:"Mostra i forzieri in diretta durante la partita?", a2:"Il gioco sblocca il replay solo a fine partita, quindi i forzieri compaiono circa 2 secondi dopo la fine. Poi la scheda in gioco ti mostra tutto.",
@@ -377,13 +376,13 @@
   // the checkout hands back the order: look for the receipt link anywhere inside it
   function findReceipt(x, d){
     if (!x || d > 7) return "";
-    if (typeof x === "string") return /^https:\/\/[a-z0-9.-]*lemonsqueezy\.com\/my-orders\//i.test(x) ? x : "";
+    if (typeof x === "string") return /^https:\/\/polar\.sh\//i.test(x) ? x : "";
     if (typeof x === "object") for (const k in x) { const r = findReceipt(x[k], d + 1); if (r) return r; }
     return "";
   }
   function showMine(o){
     document.getElementById("mine").style.display = "block";
-    const url = o && o.receipt ? o.receipt : "https://app.lemonsqueezy.com/my-orders";
+    const url = o && o.receipt ? o.receipt : "https://polar.sh/chesttracker/portal";
     document.getElementById("mRec").href = url;
     document.getElementById("mCopy").onclick = () => { try { navigator.clipboard.writeText(url); const b = document.getElementById("mCopy"); const t = b.innerHTML; b.textContent = "✓"; setTimeout(() => b.innerHTML = t, 1500); } catch (e) {} };
   }
@@ -399,7 +398,7 @@
   const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
   document.querySelectorAll("#price .buy").forEach(b => {
     const u = URLS[b.dataset.plan];
-    if (u) { b.href = u + "?embed=1&media=0"; b.classList.add("lemonsqueezy-button"); }
+    if (u) { b.href = u; b.target = "_blank"; b.rel = "noopener"; }
     else b.setAttribute("aria-disabled", "true");
   });
   window.addEventListener("load", () => {
