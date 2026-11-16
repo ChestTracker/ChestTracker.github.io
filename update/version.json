@@ -1,8 +1,8 @@
 {
-    "version":  "2.11.1",
+    "version":  "2.11.2",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "510bc4b2860cc13a29249474b1355ccca61b8fa770f61cb3c7ed3ddcd9071335",
+    "sha256":  "92c7913e5d12a677decce6c83dca2ea8ee42be6466893d068a1a4cbd3b12d196",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "0400fa7b79058f4ec9ae371330bdc5821275c7744f79aed12f4964f73b4f7953",
-    "notes":  "- Upgrade prices: the difference minus 2 EUR (use the upgrade command on Discord)\n- Small improvements and fixes"
+    "setupSha256":  "754140674935b341457be0511b158640033fde6eadc14dc904e642a4472ac4ca",
+    "notes":  "- Teammate chests now come from ChestTracker own built-in reader: ChestAlert is no longer needed or used\n- Upgrade prices: the difference minus 2 EUR, shown inside the app\n- ChestTracker is added to the Start menu when installed"
 }
