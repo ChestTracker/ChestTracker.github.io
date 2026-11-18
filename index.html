@@ -405,7 +405,7 @@
   const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
   document.querySelectorAll("#price .buy").forEach(b => {
     const u = URLS[b.dataset.plan];
-    if (u) { b.href = u; b.target = "_blank"; b.rel = "noopener"; }
+    if (u) { b.href = u; b.setAttribute("data-polar-checkout", ""); b.setAttribute("data-polar-checkout-theme", "dark"); }
     else b.setAttribute("aria-disabled", "true");
   });
   window.addEventListener("load", () => {
@@ -420,5 +420,6 @@
     } catch (e) {}
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1.12/dist/embed.global.js" defer data-auto-init></script>
 </body>
 </html>
