@@ -66,6 +66,13 @@
   .btn.sm { padding:9px 16px; font-size:14px; }
   .btn.lg { padding:16px 34px; font-size:18px; box-shadow:0 10px 30px rgba(124,92,255,.35); }
   .btn[aria-disabled="true"] { opacity:.55; pointer-events:none; }
+  /* animated turquoise-on-purple gradient for the important buttons */
+  .btn { background:linear-gradient(115deg,#5b2bff 0%,#8a4dff 30%,#14e3d1 55%,#8a4dff 80%,#5b2bff 100%); background-size:300% 100%; animation:ctShift 7s ease-in-out infinite; transition:transform .15s, filter .15s, box-shadow .15s; }
+  .btn:hover { filter:brightness(1.12) saturate(1.1); transform:translateY(-1px); }
+  .btn.lg, .btn.buy { box-shadow:0 10px 30px rgba(20,227,209,.28), 0 0 0 1px rgba(255,255,255,.08) inset; }
+  @keyframes ctShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  @media (prefers-reduced-motion: reduce) { .btn { animation:none; } }
+  .co-x { position:fixed; top:14px; right:14px; z-index:2147483647; width:42px; height:42px; border-radius:50%; border:0; cursor:pointer; color:#fff; font:700 18px/1 system-ui,sans-serif; background:linear-gradient(115deg,#5b2bff,#14e3d1); box-shadow:0 6px 20px rgba(20,227,209,.35); }
   .ghost { color:var(--text); text-decoration:none; font-weight:600; padding:16px 22px; border:1px solid var(--line); border-radius:12px; }
   button.ghost { background:none; cursor:pointer; font:inherit; font-weight:600; }
   /* hero */
@@ -403,9 +410,20 @@
   const TEST_URL = { normal: "", pro: "", ultimate: "" };
   const URLS = location.hash === "#test" ? TEST_URL : PLAN_URL;
   const ANY = !!(URLS.normal || URLS.pro || URLS.ultimate);
+  // checkout opens on top of the page; clicking outside the form does NOT close it, only the round button does
+  function openCheckout(u) {
+    if (!window.Polar || !Polar.EmbedCheckout) { location.href = u; return; }
+    Polar.EmbedCheckout.create(u, "dark").then(function (c) {
+      c.closable = false;
+      var x = document.createElement("button");
+      x.className = "co-x"; x.type = "button"; x.setAttribute("aria-label", "Close"); x.textContent = "✕";
+      x.onclick = function () { c.close(); x.remove(); };
+      document.body.appendChild(x);
+    }).catch(function () { location.href = u; });
+  }
   document.querySelectorAll("#price .buy").forEach(b => {
     const u = URLS[b.dataset.plan];
-    if (u) { b.href = u; b.setAttribute("data-polar-checkout", ""); b.setAttribute("data-polar-checkout-theme", "dark"); }
+    if (u) { b.href = u; b.addEventListener("click", function (ev) { ev.preventDefault(); openCheckout(u); }); }
     else b.setAttribute("aria-disabled", "true");
   });
   window.addEventListener("load", () => {
@@ -420,6 +438,6 @@
     } catch (e) {}
   });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1.12/dist/embed.global.js" defer data-auto-init></script>
+<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1.12/dist/embed.global.js" defer></script>
 </body>
 </html>
