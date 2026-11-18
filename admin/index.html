@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ChestTracker admin</title>
+<style>
+:root{--bg:#0e1018;--card:#171a26;--line:#262b3d;--text:#e9ecf5;--muted:#8d95ad;--gold:#f2b84b;--green:#4ade80;--red:#f87171;--blue:#7aa2ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;padding:24px 16px}
+main{max-width:860px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}
+input{background:#0b0d14;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 12px;font:inherit;width:100%;max-width:320px}
+button{background:var(--gold);color:#1a1405;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi b{display:block;font-size:28px;color:var(--gold)}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:right;padding:8px 6px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--muted);font-weight:600;font-size:13px}
+.bar{display:inline-block;height:10px;border-radius:5px;background:var(--blue);vertical-align:middle}
+.err{color:var(--red);min-height:20px;margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+  <h1>ChestTracker admin</h1>
+  <div class="muted">Private. Anonymous numbers only (random install ids). The password is checked on the server, not in this page.</div>
+
+  <div class="card" id="login">
+    <form onsubmit="go(event)">
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password" autofocus>
+      <button type="submit">Open</button>
+    </form>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="out" hidden>
+    <div class="kpis">
+      <div class="card kpi"><span class="muted">Active today</span><b id="kToday">0</b></div>
+      <div class="card kpi"><span class="muted">New today</span><b id="kNew">0</b></div>
+      <div class="card kpi"><span class="muted">Active, last 7 days (sum of days)</span><b id="k7">0</b></div>
+      <div class="card kpi"><span class="muted">All installs seen</span><b id="kTot">0</b></div>
+    </div>
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:17px">Last 14 days</h2>
+      <table id="tbl"></table>
+      <div class="muted" style="font-size:12px;margin-top:8px">Active = installs that opened the app that day (counted once). Plans: trial, normal, pro, ultimate, locked (trial over, no key).</div>
+    </div>
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:17px">Versions today</h2>
+      <div id="ver"></div>
+    </div>
+  </div>
+</main>
+<script>
+var API = "https://chesttracker-roles.valentini06.workers.dev/stats";
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+async function go(e){
+  e.preventDefault();
+  var pw = document.getElementById("pw").value, err = document.getElementById("err");
+  err.textContent = "";
+  try {
+    var r = await fetch(API + "?days=14", { headers: { "x-admin": pw } });
+    if (!r.ok) { err.textContent = r.status === 401 ? "Wrong password" : r.status === 429 ? "Too many tries: wait one hour" : "Error " + r.status; return; }
+    show(await r.json());
+    document.getElementById("pw").value = "";
+  } catch (x) { err.textContent = "No connection"; }
+}
+function show(d){
+  document.getElementById("login").hidden = true;
+  document.getElementById("out").hidden = false;
+  var days = d.days || [], t = days[0] || { active: 0, news: 0 };
+  document.getElementById("kToday").textContent = t.active;
+  document.getElementById("kNew").textContent = t.news;
+  document.getElementById("k7").textContent = days.slice(0, 7).reduce(function(a, x){ return a + x.active; }, 0);
+  document.getElementById("kTot").textContent = d.total;
+  var max = Math.max.apply(null, days.map(function(x){ return x.active; }).concat([1]));
+  var P = ["trial", "normal", "pro", "ultimate", "locked"];
+  var h = "<tr><th>Day</th><th>Active</th><th></th><th>New</th>" + P.map(function(p){ return "<th>" + p + "</th>"; }).join("") + "</tr>";
+  days.forEach(function(x){
+    h += "<tr><td>" + esc(x.day) + "</td><td>" + x.active + "</td><td style='text-align:left'><span class='bar' style='width:" + Math.round(x.active / max * 140) + "px'></span></td><td>" + x.news + "</td>" +
+      P.map(function(p){ return "<td>" + (x.plans[p] || 0) + "</td>"; }).join("") + "</tr>";
+  });
+  document.getElementById("tbl").innerHTML = h;
+  var v = d.versionsToday || {}, keys = Object.keys(v).sort();
+  document.getElementById("ver").innerHTML = keys.length ? keys.map(function(k){ return "<div><b>" + esc(k) + "</b> · " + v[k] + "</div>"; }).join("") : "<span class='muted'>No data yet</span>";
+}
+</script>
+</body>
+</html>
