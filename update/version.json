@@ -1,8 +1,8 @@
 {
-    "version":  "2.13.0",
+    "version":  "2.14.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "c721c3b2bd8e85d3e2652eff3b60b4cddbb68f38f2ec131d8c5f7dcfd911e280",
+    "sha256":  "8b785e1f018ddedd2ef16224ee932c1fefe281d68fb18c5f2ac03f739628437b",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "f7e5eed4f86c77f0fdb0175e7ef339261c7baaae77ffda4b126bdbe14891e85c",
-    "notes":  "- New light installer ChestTracker-Free: 3 free games, the engine downloads itself, then a licence key unlocks everything\n- Free early-user access is gone: every PC needs a licence key or the 3 free games\n- Deactivate this PC stops everything and sends you to the dashboard"
+    "setupSha256":  "adb218590afee7b9bd223093722c9db169582c654247997b6b65f8676c4d6bf9",
+    "notes":  "- Anonymous usage count (once a day: random id, version, plan): switch it off in Settings\n- Light installer ChestTracker-Free and the engine downloads itself\n- Free early-user access is gone: licence key or the 3 free games"
 }
