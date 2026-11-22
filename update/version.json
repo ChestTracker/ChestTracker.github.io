@@ -1,8 +1,8 @@
 {
-    "version":  "2.15.5",
+    "version":  "2.15.6",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "6f5a8fdddc92e2ec64b8bca43e37948088c5a878c7beda8bfe6df01d8afa9954",
+    "sha256":  "d4287844d6d24d048228cb2a4e9b251cff81d5fe26cea2fc811f14d86c33a562",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "bc38558221db941f02f5ac7e87056fea25be5a79e8ef5a95ee4b8f3bae62fbb5",
-    "notes":  "- Discord status: Playing Chest Tracker while Fortnite runs, with a download button for your friends (switch it off in Settings)\n- Quieter updates and the dashboard moves to your second screen when Fortnite starts\n- ChestTracker in the Start menu"
+    "setupSha256":  "e409b3cfac93e95eeb217192f8f6b417a314c22175f4a6a4649e24c8fc80042b",
+    "notes":  "- Weekly rewards: the Jam Track is now found even when the set name of the week is not the artist (week 4 Teto)\n- Discord status with clickable links, image and play mode"
 }
