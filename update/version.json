@@ -1,8 +1,8 @@
 {
-    "version":  "2.15.0",
+    "version":  "2.15.1",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "2e2398afde5aba693989e8845318848500887cd5ef86c7b412da699a8bf9f755",
+    "sha256":  "3075e2425bd799b80f440ccadc5554805d195f1c0f228780444ad94d9d4c090f",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "c08c75835fc9b337f5e3f1a5c13c78e8e62a096fe6df936c6dc747c4c8f1fa9c",
+    "setupSha256":  "dd131a484c654e1fb6618c67939ca0f25283442ecd27b52a201e8cb6b95759e6",
     "notes":  "- Discord status: Playing Chest Tracker while Fortnite runs, with a download button for your friends (switch it off in Settings)\n- Quieter updates and the dashboard moves to your second screen when Fortnite starts\n- ChestTracker in the Start menu"
 }
