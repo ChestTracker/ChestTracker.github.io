@@ -1,8 +1,8 @@
 {
-    "version":  "2.14.3",
+    "version":  "2.15.0",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "31f6b793bf770f7c85d022ea948cc4a5a33325efd6a110cce43d5fc147088481",
+    "sha256":  "2e2398afde5aba693989e8845318848500887cd5ef86c7b412da699a8bf9f755",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "2c773deca577fd7fd1ccfd298c04f51fb15228c0f067f3e8e6cfd11d5eb92131",
-    "notes":  "- After an update nothing pops up (the dashboard returns only if it was open)\n- The dashboard moves to your second screen when Fortnite starts\n- No more No new replay warning when you simply have not played for a while\n- ChestTracker appears in the Start menu as Chest Tracker"
+    "setupSha256":  "c08c75835fc9b337f5e3f1a5c13c78e8e62a096fe6df936c6dc747c4c8f1fa9c",
+    "notes":  "- Discord status: Playing Chest Tracker while Fortnite runs, with a download button for your friends (switch it off in Settings)\n- Quieter updates and the dashboard moves to your second screen when Fortnite starts\n- ChestTracker in the Start menu"
 }
