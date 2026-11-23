@@ -1,8 +1,8 @@
 {
-    "version":  "2.15.8",
+    "version":  "2.15.9",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "c4fc68afd5cd465c170334f6b2e1b9007a2691b97b08ed6b62fe91020d29b21d",
+    "sha256":  "990c1b6c53d30c2bc6a30683b9a8af00bc907f6f2e25cfc79d21203f80e16951",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "19b348ad3a83f165d540077fb5c6a9dd90e9dacfa4f7274c60a60bd1aba75ebf",
-    "notes":  "- Discord status is now a normal Playing card like Tracker.gg, with In Lobby or In Match, your chest count, image and buttons\n- Weekly prizes: vehicle picture shows the car"
+    "setupSha256":  "f3300e1ffbab7ffa94f0378a3b79cb6e09a63e703120c136f94945e95f47841d",
+    "notes":  "- Discord status back to a Watching card (a second Playing card is hidden by Discord), with In Lobby or In Match, chest count, image and buttons"
 }
