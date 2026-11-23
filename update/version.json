@@ -1,8 +1,8 @@
 {
-    "version":  "2.15.7",
+    "version":  "2.15.8",
     "url":  "https://chesttracker.github.io/update/ChestTracker.exe",
-    "sha256":  "54a42c677588cd00cb6c5ea5c10ba45e35f654ac234ab14bd4ad0784e4daee47",
+    "sha256":  "c4fc68afd5cd465c170334f6b2e1b9007a2691b97b08ed6b62fe91020d29b21d",
     "setupUrl":  "https://chesttracker.github.io/update/ChestTracker-Update.exe",
-    "setupSha256":  "2c234e5272069523fe6da2d7166bd2b6de7e0ce03b91c5e67f5bdd36bcf79d92",
-    "notes":  "- Weekly prizes: the vehicle picture now shows the car instead of an empty placeholder\n- Discord status with clickable links, image and play mode"
+    "setupSha256":  "19b348ad3a83f165d540077fb5c6a9dd90e9dacfa4f7274c60a60bd1aba75ebf",
+    "notes":  "- Discord status is now a normal Playing card like Tracker.gg, with In Lobby or In Match, your chest count, image and buttons\n- Weekly prizes: vehicle picture shows the car"
 }
